@@ -1,0 +1,13 @@
+# Robots.txt para Iseecodes
+# https://iseecodes.com.br
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://iseecodes.com.br/sitemap.xml
+
+# Bloquear pastas de sistema
+Disallow: /api/
+Disallow: /_next/
+Disallow: /scripts/
