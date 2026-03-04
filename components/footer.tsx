@@ -21,17 +21,17 @@ const contactItems = [
   },
   {
     icon: Phone,
-    text: "+55 (11) 99999-9999",
+    text: "+55 (51) 99969-8812",
     animation: "animate-ring",
-    href: "tel:+5511999999999",
-    ariaLabel: "Ligar para +55 11 99999-9999",
+    href: "tel:+5551999698812",
+    ariaLabel: "Ligar para +55 51 99969-8812",
   },
   {
     icon: MapPin,
-    text: "São Paulo, SP - Brasil",
+    text: "Porto Alegre, RS - Brasil",
     animation: "animate-bounce-subtle",
     href: null,
-    ariaLabel: "Localização: São Paulo, SP - Brasil",
+    ariaLabel: "Localização: Porto Alegre, RS - Brasil",
   },
 ]
 
@@ -87,38 +87,38 @@ export function Footer() {
               Iseecodes Desenvolvimento Web Ltda. Software house brasileira especializada em soluções web e mobile sob
               demanda.
             </p>
-            <div className="flex gap-4" role="list" aria-label="Redes sociais">
-              <a
-                href="https://linkedin.com/company/iseecodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-[#0A66C2] hover:scale-110"
-                aria-label="LinkedIn da Iseecodes (abre em nova aba)"
-                role="listitem"
-              >
-                <Linkedin className="w-5 h-5 text-white" aria-hidden="true" />
-              </a>
-              <a
-                href="https://instagram.com/iseecodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] hover:scale-110"
-                aria-label="Instagram da Iseecodes (abre em nova aba)"
-                role="listitem"
-              >
-                <Instagram className="w-5 h-5 text-white" aria-hidden="true" />
-              </a>
-              <a
-                href="https://github.com/iseecodes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-[#333] hover:scale-110"
-                aria-label="GitHub da Iseecodes (abre em nova aba)"
-                role="listitem"
-              >
-                <Github className="w-5 h-5 text-white" aria-hidden="true" />
-              </a>
-            </div>
+            {/*<div className="flex gap-4" role="list" aria-label="Redes sociais">*/}
+            {/*  <a*/}
+            {/*    href="https://linkedin.com/company/iseecodes"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-[#0A66C2] hover:scale-110"*/}
+            {/*    aria-label="LinkedIn da Iseecodes (abre em nova aba)"*/}
+            {/*    role="listitem"*/}
+            {/*  >*/}
+            {/*    <Linkedin className="w-5 h-5 text-white" aria-hidden="true" />*/}
+            {/*  </a>*/}
+            {/*  <a*/}
+            {/*    href="https://instagram.com/iseecodes"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] hover:scale-110"*/}
+            {/*    aria-label="Instagram da Iseecodes (abre em nova aba)"*/}
+            {/*    role="listitem"*/}
+            {/*  >*/}
+            {/*    <Instagram className="w-5 h-5 text-white" aria-hidden="true" />*/}
+            {/*  </a>*/}
+            {/*  <a*/}
+            {/*    href="https://github.com/iseecodes"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="group w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center transition-all duration-300 hover:bg-[#333] hover:scale-110"*/}
+            {/*    aria-label="GitHub da Iseecodes (abre em nova aba)"*/}
+            {/*    role="listitem"*/}
+            {/*  >*/}
+            {/*    <Github className="w-5 h-5 text-white" aria-hidden="true" />*/}
+            {/*  </a>*/}
+            {/*</div>*/}
           </div>
 
           <nav aria-label="Navegação do rodapé">

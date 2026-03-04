@@ -46,8 +46,8 @@ export function FounderSection() {
                     aria-hidden="true"
                   />
                   <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-2xl font-bold text-white block">Ricardo Tortorelli</span>
-                    <span className="text-white/80">Sócio Proprietário & Contador</span>
+                    <span className="text-2xl font-bold text-white block">Ricardo Costa Tortorelli</span>
+                    <span className="text-white/80">Sócio Proprietário</span>
                   </figcaption>
                 </figure>
 
@@ -111,7 +111,7 @@ export function FounderSection() {
                 <div>
                   <div className="font-semibold text-foreground">Representatividade Nacional</div>
                   <div className="text-sm text-muted-foreground">
-                    Por quase <span className="font-medium text-foreground">10 anos</span> membro da
+                    Por quase <span className="font-medium text-foreground">10 anos</span>,paralela a atividade profissional, atuou como membro da
                     <span className="font-medium text-foreground">
                       {" "}
                       Comissão Técnica Nacional de Contabilidade da ABRAPP
