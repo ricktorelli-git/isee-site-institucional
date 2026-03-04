@@ -94,7 +94,7 @@ export function Header() {
           >
             <div
               className={cn(
-                "absolute bottom-0 h-[2px] rounded-full transition-all duration-500 ease-out",
+                "absolute bottom-0 h-0.5 rounded-full transition-all duration-500 ease-out",
                 isScrolled ? "bg-primary" : "bg-accent",
                 indicatorStyle.width > 0 ? "opacity-100" : "opacity-0",
               )}

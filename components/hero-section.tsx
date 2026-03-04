@@ -3,12 +3,13 @@
 import { useState, useEffect, useMemo } from "react"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {cn} from "@/lib/utils";
 
 export function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const fullText = "Dê o próximo passo na sua gestão"
+  const fullText = "Dê o próximo passo na gestão de sua empresa."
   const [displayText, setDisplayText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
   const [typingComplete, setTypingComplete] = useState(false)
@@ -67,11 +68,11 @@ export function HeroSection() {
       <>
         {beforeProximoPasso}
         <span className="relative inline-block">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent/80 to-primary">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-accent via-accent/80 to-primary">
             {proximoPassoText}
           </span>
           {typingComplete && proximoPassoText === "próximo passo" && (
-            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent to-primary rounded-full animate-[expandLine_0.6s_ease-out_forwards]" />
+            <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-accent to-primary rounded-full animate-[expandLine_0.6s_ease-out_forwards]" />
           )}
         </span>
         {afterProximoPasso}
@@ -87,15 +88,15 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <div
-          className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-[blob1_20s_ease-in-out_infinite]"
+          className="absolute top-0 left-0 w-125 h-125 bg-primary/20 rounded-full blur-[120px] animate-[blob1_20s_ease-in-out_infinite]"
           style={{ willChange: "transform" }}
         />
         <div
-          className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/15 rounded-full blur-[100px] animate-[blob2_25s_ease-in-out_infinite]"
+          className="absolute bottom-0 right-0 w-100 h-100 bg-accent/15 rounded-full blur-[100px] animate-[blob2_25s_ease-in-out_infinite]"
           style={{ willChange: "transform" }}
         />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-dark/10 rounded-full blur-[150px] animate-[blob3_18s_ease-in-out_infinite]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary-dark/10 rounded-full blur-[150px] animate-[blob3_18s_ease-in-out_infinite]"
           style={{ willChange: "transform" }}
         />
 
@@ -108,14 +109,14 @@ export function HeroSection() {
         />
 
         <div className="absolute inset-0">
-          <div className="absolute w-[200%] h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent top-[30%] -left-1/2 rotate-[15deg] animate-[slideRight_12s_linear_infinite]" />
-          <div className="absolute w-[200%] h-0.5 bg-gradient-to-r from-transparent via-accent/15 to-transparent top-[60%] -left-1/2 rotate-[-10deg] animate-[slideLeft_15s_linear_infinite]" />
-          <div className="absolute w-[200%] h-0.5 bg-gradient-to-r from-transparent via-primary/15 to-transparent top-[80%] -left-1/2 rotate-[8deg] animate-[slideRight_18s_linear_infinite]" />
+          <div className="absolute w-[200%] h-0.5 bg-linear-to-r from-transparent via-primary/20 to-transparent top-[30%] -left-1/2 rotate-15 animate-[slideRight_12s_linear_infinite]" />
+          <div className="absolute w-[200%] h-0.5 bg-linear-to-r from-transparent via-accent/15 to-transparent top-[60%] -left-1/2 rotate-[-10deg] animate-[slideLeft_15s_linear_infinite]" />
+          <div className="absolute w-[200%] h-0.5 bg-linear-to-r from-transparent via-primary/15 to-transparent top-[80%] -left-1/2 rotate-[8deg] animate-[slideRight_18s_linear_infinite]" />
         </div>
       </div>
 
       <div
-        className="absolute inset-0 bg-gradient-to-b from-secondary/80 via-transparent to-secondary z-[1]"
+        className="absolute inset-0 bg-linear-to-b from-secondary/80 via-transparent to-secondary z-1"
         aria-hidden="true"
       />
 
@@ -129,16 +130,16 @@ export function HeroSection() {
               animation: isLoaded && !isScrolled ? "fadeSlideUp 0.8s ease-out forwards" : "none",
             }}
           >
-            <span className="relative flex h-2 w-2 flex-shrink-0" aria-hidden="true">
+            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <div className="relative overflow-hidden w-[240px] sm:w-[260px]">
+            <div className="relative overflow-hidden w-60 sm:w-65">
               <span className="inline-block text-white/90 text-sm font-medium tracking-wide whitespace-nowrap animate-[marquee_8s_linear_infinite]">
-                Software House Brasileira
+                Software de gestão sob demanda.
               </span>
             </div>
-            <span className="relative flex h-2 w-2 flex-shrink-0" aria-hidden="true">
+            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
@@ -151,11 +152,10 @@ export function HeroSection() {
               opacity: 0,
             }}
           >
-            <span className="sr-only">Dê o próximo passo na sua gestão</span>
             <span aria-hidden="true">
               {renderedText}
               <span
-                className={`inline-block w-[4px] h-[0.9em] bg-accent ml-1 align-middle transition-opacity duration-500 ${
+                className={`inline-block w-1 h-[0.9em] bg-accent ml-1 align-middle transition-opacity duration-500 ${
                   showCursor && !typingComplete ? "opacity-100" : typingComplete ? "opacity-0" : "opacity-0"
                 }`}
               />
@@ -169,8 +169,15 @@ export function HeroSection() {
               opacity: 0,
             }}
           >
-            Incorpore soluções digitais personalizadas ao seu negócio. Desenvolvemos software sob demanda com a
-            experiência de quem entende de gestão corporativa há mais de 35 anos.
+            Fuja da solução genérica e abrace o poder do software sob demanda. Na{" "}
+            <span className={cn("font-semibold", isScrolled ? "text-white" : "text-white")}>
+              <span className={cn("transition-all duration-500", isScrolled ? "text-secondary" : "text-accent")}>
+                isee
+              </span>
+              codes
+            </span>
+            , unimos tecnologia e expertise para criar soluções com software especializados, porêm
+            escaláveis, possibilitando a redução do custo de desenvolvimento e de implantação.
           </p>
 
           <div
@@ -194,7 +201,7 @@ export function HeroSection() {
                   />
                 </span>
                 <span
-                  className="absolute inset-0 bg-gradient-to-r from-accent via-white/20 to-accent bg-[length:200%_100%] animate-[shimmer_2s_linear_infinite]"
+                  className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite]"
                   aria-hidden="true"
                 />
               </Button>
@@ -222,21 +229,21 @@ export function HeroSection() {
           <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10">
             <div className="text-center group cursor-default">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                35+
+                Processos
               </div>
-              <div className="text-white/60 text-sm">Anos de Experiência em Gestão</div>
+              <div className="text-white/60 text-sm">Controles Internos</div>
             </div>
             <div className="text-center group cursor-default">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                100%
+                Indicadores
               </div>
-              <div className="text-white/60 text-sm">Personalizado</div>
+              <div className="text-white/60 text-sm">Medidas de Desempenho</div>
             </div>
             <div className="text-center group cursor-default">
               <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
                 Gestão
               </div>
-              <div className="text-white/60 text-sm">em Foco</div>
+              <div className="text-white/60 text-sm">Foco Estratégico</div>
             </div>
           </div>
         </div>

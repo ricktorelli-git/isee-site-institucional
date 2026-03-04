@@ -10,21 +10,39 @@ export function FounderSection() {
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="py-24 bg-background" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image side */}
+
+        {/* Header */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+            Sobre o Fundador
+          </span>
+          <h2 id="sobre-titulo" className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            Gestão corporativa antes do código
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            A Iseecodes surgiu da vivência real no campo de batalha corporativo de alta performance.</p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Esse é o fundamento que sustenta cada solução desenvolvida.
+          </p>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+            {/* Image Section */}
             <div className={cn("relative", inView && "animate-in fade-in slide-in-from-left-10 duration-700")}>
               <div className="relative">
                 <figure className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/professional-businessman-contador-executive-portra.jpg"
-                    alt="Ricardo Tortorelli, Contador e Sócio Proprietário da Iseecodes, com mais de 35 anos de experiência em gestão corporativa"
-                    className="w-full aspect-[4/5] object-cover"
+                    src="/socio-fundador.jpeg"
+                    alt="Ricardo Tortorelli, Contador e Sócio Proprietário da Iseecodes"
+                    className="w-full aspect-4/5 object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/20 to-transparent"
+                    className="absolute inset-0 bg-linear-to-t from-secondary/90 via-secondary/20 to-transparent"
                     aria-hidden="true"
                   />
                   <figcaption className="absolute bottom-0 left-0 right-0 p-6">
@@ -50,50 +68,46 @@ export function FounderSection() {
               </div>
             </div>
 
-            {/* Content side */}
+            {/* Content Section */}
             <div className={cn(inView && "animate-in fade-in slide-in-from-right-10 duration-700 delay-200")}>
-              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-                Sobre o Fundador
-              </span>
 
-              <h2 id="sobre-titulo" className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Experiência que faz a diferença
-              </h2>
-
-              <div className="flex items-start gap-3 mb-6 p-4 rounded-xl bg-muted/50 border-l-4 border-primary">
-                <GraduationCap className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+              {/* Formação Acadêmica */}
+              <div className="flex items-start gap-3 mb-8 p-4 rounded-xl bg-muted/50 border-l-4 border-primary">
+                <GraduationCap className="w-6 h-6 text-primary mt-0.5 shrink-0" aria-hidden="true" />
                 <div>
                   <div className="font-semibold text-foreground">Formação Acadêmica</div>
                   <div className="text-sm text-muted-foreground">
-                    Contador formado pela <span className="font-medium text-foreground">PUC-RS (1997)</span> |
-                    Pós-Graduado pela <span className="font-medium text-foreground">FGV (2005)</span>
+                    Contador <span className="font-medium text-foreground">PUC-RS (1997)</span> •
+                    Pós-Graduado <span className="font-medium text-foreground">FGV (2005)</span>
                   </div>
                 </div>
               </div>
 
+              {/* Blockquote */}
               <blockquote className="relative mb-6">
                 <Quote className="absolute -left-2 -top-2 w-10 h-10 text-primary/20" aria-hidden="true" />
                 <p className="pl-8 text-lg text-muted-foreground leading-relaxed italic">
-                  &ldquo;Minha trajetória de 35 anos na gestão de um dos maiores Fundos de Previdência do Brasil me
-                  proporcionou uma visão completa de processos corporativos. Na Iseecodes, transformamos essa
-                  experiência em soluções tecnológicas que realmente entendem o negócio do cliente.&rdquo;
+                  &ldquo;Minha trajetória por décadas na gestão de um dos maiores Fundos de Previdência do Brasil
+                  proporcionou uma visão completa de processos corporativos em um ambiente extremamente regulado.
+                  Na Iseecodes, transformamos essa experiência em soluções tecnológicas que realmente entendem
+                  o negócio do cliente.&rdquo;
                 </p>
               </blockquote>
 
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Com atuação nas áreas de{" "}
-                <span className="font-medium text-foreground">
-                  Controladoria, Financeira, Contábil e Conselho Fiscal
-                </span>
-                , desenvolvo soluções que integram a excelência técnica com a visão estratégica de quem viveu a
-                complexidade da gestão corporativa. A Iseecodes está preparada para desenvolver qualquer solução web e
-                mobile, mas nossa{" "}
-                <span className="font-medium text-foreground">especialidade em gestão financeira</span> é nosso maior
-                diferencial.
-              </p>
+              {/* Key insight */}
+              <div className="bg-accent/10 rounded-lg p-5 mb-8 border border-accent/20">
+                <p className="text-foreground font-semibold">
+                  ✓ Gestão antes do código. Eis nossa vantagem competitiva.
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Não desenvolvemos tecnologia genérica, vivenciamos a realidade de gestão e criamos
+                  soluções especializadas que resolvem problemas reais.
+                </p>
+              </div>
 
+              {/* Representatividade */}
               <div className="flex items-start gap-3 mb-6 p-4 rounded-xl bg-accent/10 border border-accent/20">
-                <Users className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <Users className="w-6 h-6 text-accent mt-0.5 shrink-0" aria-hidden="true" />
                 <div>
                   <div className="font-semibold text-foreground">Representatividade Nacional</div>
                   <div className="text-sm text-muted-foreground">
@@ -106,40 +120,75 @@ export function FounderSection() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <div className="grid grid-cols-2 gap-4" role="list" aria-label="Áreas de expertise">
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50" role="listitem">
-                  <PiggyBank className="w-6 h-6 text-primary mt-0.5" aria-hidden="true" />
-                  <div>
-                    <div className="font-semibold text-foreground">Gestão Financeira</div>
-                    <div className="text-sm text-muted-foreground">Especialidade e diferencial</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50" role="listitem">
-                  <Building2 className="w-6 h-6 text-primary mt-0.5" aria-hidden="true" />
-                  <div>
-                    <div className="font-semibold text-foreground">Controladoria</div>
-                    <div className="text-sm text-muted-foreground">Governança e controles</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50" role="listitem">
-                  <BookOpen className="w-6 h-6 text-accent mt-0.5" aria-hidden="true" />
-                  <div>
-                    <div className="font-semibold text-foreground">Contabilidade</div>
-                    <div className="text-sm text-muted-foreground">Expertise técnica</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 p-4 rounded-xl bg-muted/50" role="listitem">
-                  <TrendingUp className="w-6 h-6 text-accent mt-0.5" aria-hidden="true" />
-                  <div>
-                    <div className="font-semibold text-foreground">Conselho Fiscal</div>
-                    <div className="text-sm text-muted-foreground">Visão estratégica</div>
-                  </div>
-                </div>
+        {/* Full-Width Expertise Section */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" role="list" aria-label="Áreas de expertise">
+            <div
+              className={cn(
+                "flex items-start gap-3 p-5 rounded-xl bg-muted/50 hover:bg-muted transition-colors",
+                inView && "animate-in fade-in slide-in-from-bottom-4"
+              )}
+              style={{ animationDelay: "0ms" }}
+              role="listitem"
+            >
+              <PiggyBank className="w-6 h-6 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+              <div>
+                <div className="font-semibold text-foreground text-sm">Gestão Financeira</div>
+                <div className="text-xs text-muted-foreground mt-1">Especialidade principal</div>
+              </div>
+            </div>
+
+            <div
+              className={cn(
+                "flex items-start gap-3 p-5 rounded-xl bg-muted/50 hover:bg-muted transition-colors",
+                inView && "animate-in fade-in slide-in-from-bottom-4"
+              )}
+              style={{ animationDelay: "100ms" }}
+              role="listitem"
+            >
+              <Building2 className="w-6 h-6 text-primary mt-0.5 shrink-0" aria-hidden="true" />
+              <div>
+                <div className="font-semibold text-foreground text-sm">Controladoria</div>
+                <div className="text-xs text-muted-foreground mt-1">Governança como fundamento</div>
+              </div>
+            </div>
+
+            <div
+              className={cn(
+                "flex items-start gap-3 p-5 rounded-xl bg-muted/50 hover:bg-muted transition-colors",
+                inView && "animate-in fade-in slide-in-from-bottom-4"
+              )}
+              style={{ animationDelay: "200ms" }}
+              role="listitem"
+            >
+              <BookOpen className="w-6 h-6 text-accent mt-0.5 shrink-0" aria-hidden="true" />
+              <div>
+                <div className="font-semibold text-foreground text-sm">Contabilidade</div>
+                <div className="text-xs text-muted-foreground mt-1">Técnica apurada</div>
+              </div>
+            </div>
+
+            <div
+              className={cn(
+                "flex items-start gap-3 p-5 rounded-xl bg-muted/50 hover:bg-muted transition-colors",
+                inView && "animate-in fade-in slide-in-from-bottom-4"
+              )}
+              style={{ animationDelay: "300ms" }}
+              role="listitem"
+            >
+              <TrendingUp className="w-6 h-6 text-accent mt-0.5 shrink-0" aria-hidden="true" />
+              <div>
+                <div className="font-semibold text-foreground text-sm">Conselho Fiscal</div>
+                <div className="text-xs text-muted-foreground mt-1">Visão estratégica</div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )

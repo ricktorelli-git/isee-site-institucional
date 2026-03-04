@@ -22,9 +22,7 @@ export const metadata: Metadata = {
     "software house",
     "sistemas de gestao",
     "gestao financeira",
-    "aplicativos mobile",
-    "Brasil",
-    "Iseecodes",
+    "aplicativos mobile"
   ],
   authors: [{ name: "Iseecodes Desenvolvimento Web Ltda" }],
   creator: "Iseecodes",
@@ -53,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Iseecodes - Desenvolvimento Web e Mobile",
     description:
-      "Software house brasileira especializada em desenvolvimento web, mobile e sistemas de gestao financeira sob demanda.",
+      "Software house brasileira especializada em desenvolvimento web, mobile e sistemas de gestao sob demanda.",
     images: ["/og-image.jpg"],
   },
   robots: {

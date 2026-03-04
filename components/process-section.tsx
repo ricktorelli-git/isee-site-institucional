@@ -1,18 +1,18 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { FileText, Target, CheckCircle2, Code, Rocket, Check } from "lucide-react"
+import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
 const processSteps = [
   {
-    icon: FileText,
+    icon: FileSearch,
     number: "01",
     title: "Definição",
     description: "Entendemos suas necessidades e objetivos de negócio",
     details: [
-      "Reunião de levantamento de requisitos",
+      "Reuniões de levantamento de requisitos",
       "Análise de processos atuais",
       "Identificação de dores e oportunidades",
       "Definição de objetivos mensuráveis",
@@ -20,7 +20,7 @@ const processSteps = [
     color: "bg-primary",
   },
   {
-    icon: Target,
+    icon: ClipboardList,
     number: "02",
     title: "Escopo",
     description: "Documentamos funcionalidades, prazos e entregas",
@@ -46,12 +46,12 @@ const processSteps = [
     color: "bg-primary",
   },
   {
-    icon: Code,
+    icon: Code2,
     number: "04",
     title: "Desenvolvimento",
     description: "Codificamos com as melhores práticas",
     details: [
-      "Sprints semanais com entregas parciais",
+      "Sprints quinzenais com entregas parciais",
       "Reuniões de acompanhamento",
       "Ambiente de homologação disponível",
       "Testes automatizados contínuos",
@@ -62,9 +62,9 @@ const processSteps = [
     icon: Rocket,
     number: "05",
     title: "Entrega",
-    description: "Deploy completo e suporte garantido",
+    description: "Implantação e suporte garantido",
     details: [
-      "Implantação em ambiente de produção",
+      "Implantação em ambiente de produção SaaS",
       "Treinamento da equipe usuária",
       "Documentação técnica completa",
       "Suporte e manutenção continuada",
@@ -121,7 +121,7 @@ export function ProcessSection() {
           <div className="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-white/10">
             <div
               className={cn(
-                "w-full bg-gradient-to-b from-primary via-accent to-primary transition-all duration-[2500ms] ease-out",
+                "w-full bg-linear-to-b from-primary via-accent to-primary transition-all duration-2500 ease-out",
                 inView ? "h-full" : "h-0",
               )}
             />
@@ -142,7 +142,7 @@ export function ProcessSection() {
                   )}
                 >
                   {/* Ícone central */}
-                  <div className="relative z-10 flex-shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
+                  <div className="relative z-10 shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
                     <div
                       className={cn(
                         "w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500 hover:scale-110",
@@ -183,7 +183,7 @@ export function ProcessSection() {
                           >
                             <Check
                               className={cn(
-                                "w-4 h-4 mt-0.5 flex-shrink-0",
+                                "w-4 h-4 mt-0.5 shrink-0",
                                 step.color === "bg-primary" ? "text-primary" : "text-accent",
                               )}
                             />
