@@ -122,19 +122,7 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h2
-              className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-15 leading-relaxed font-medium"
-              style={{
-                animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.3s forwards" : "none",
-                opacity: 0,
-              }}
-          >
-            Soluções com base em{" "}
-            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold">
-              35+ anos
-            </span>{" "}
-            de experiência em gestão.
-          </h2>
+
 
           <h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-10 min-h-[1.2em] md:min-h-[1.5em]"
@@ -152,6 +140,21 @@ export function HeroSection() {
               />
             </span>
           </h1>
+
+          <h2
+            className="text-sm md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 md:mb-15 leading-relaxed font-medium mt-8 md:mt-0 px-4 md:px-0"
+            style={{
+              animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.3s forwards" : "none",
+              opacity: 0,
+            }}
+          >
+            Soluções com base em{" "}
+            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold whitespace-nowrap">
+              35+ anos
+            </span>{" "}
+            de experiência em gestão.
+          </h2>
+
           <p
               className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-15 leading-relaxed"
               style={{
