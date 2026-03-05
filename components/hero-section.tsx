@@ -140,12 +140,6 @@ export function HeroSection() {
               />
             </span>
           </h1>
-            Soluções com base em{" "}
-            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold whitespace-nowrap">
-              35+ anos
-            </span>{" "}
-            de experiência em gestão.
-          </h2>
 
           <p
               className="text-sm sm:text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed px-2 md:px-0"
