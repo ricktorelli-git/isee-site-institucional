@@ -136,7 +136,7 @@ export function HeroSection() {
             </span>
             <div className="relative overflow-hidden w-60 sm:w-65">
               <span className="inline-block text-white/90 text-sm font-medium tracking-wide whitespace-nowrap animate-[marquee_8s_linear_infinite]">
-                Software de gestão sob demanda.
+                Sistemas de gestão sob medida.
               </span>
             </div>
             <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
@@ -213,35 +213,6 @@ export function HeroSection() {
                 <span className="group-hover:tracking-wider transition-all duration-300">Conhecer Serviços</span>
               </Button>
             </a>
-          </div>
-        </div>
-
-        <div
-          className="w-full max-w-4xl mx-auto mt-auto pb-16"
-          style={{
-            animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.8s forwards" : "none",
-            opacity: 0,
-          }}
-        >
-          <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/10">
-            <div className="text-center group cursor-default">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                Processos
-              </div>
-              <div className="text-white/60 text-sm">Controles Internos</div>
-            </div>
-            <div className="text-center group cursor-default">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                Indicadores
-              </div>
-              <div className="text-white/60 text-sm">Medidas de Desempenho</div>
-            </div>
-            <div className="text-center group cursor-default">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
-                Gestão
-              </div>
-              <div className="text-white/60 text-sm">Foco Estratégico</div>
-            </div>
           </div>
         </div>
       </div>

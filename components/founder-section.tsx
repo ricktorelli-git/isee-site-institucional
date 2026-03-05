@@ -87,10 +87,11 @@ export function FounderSection() {
               <blockquote className="relative mb-6">
                 <Quote className="absolute -left-2 -top-2 w-10 h-10 text-primary/20" aria-hidden="true" />
                 <p className="pl-8 text-lg text-muted-foreground leading-relaxed italic">
-                  &ldquo;Minha trajetória por décadas na gestão de um dos maiores Fundos de Previdência do Brasil
-                  proporcionou uma visão completa de processos corporativos em um ambiente extremamente regulado.
-                  Na Iseecodes, transformamos essa experiência em soluções tecnológicas que realmente entendem
-                  o negócio do cliente.&rdquo;
+                  &ldquo;Minha trajetória por décadas na gestão de um grande fundo de previdência
+                  complementar no Brasil, proporcionou uma visão completa de processos em ambientes
+                  corporativos de alta performance. Na Iseecodes, transformamos
+                  essa experiência em soluções tecnológicas que realmente entendem os desafios de
+                  gestão do cliente.&rdquo;
                 </p>
               </blockquote>
 
@@ -111,7 +112,8 @@ export function FounderSection() {
                 <div>
                   <div className="font-semibold text-foreground">Representatividade Nacional</div>
                   <div className="text-sm text-muted-foreground">
-                    Por quase <span className="font-medium text-foreground">10 anos</span>,paralela a atividade profissional, atuou como membro da
+                    Por quase <span className="font-medium text-foreground">10 anos</span>, paralelamente
+                    à atividade profissional, atuou como membro da
                     <span className="font-medium text-foreground">
                       {" "}
                       Comissão Técnica Nacional de Contabilidade da ABRAPP

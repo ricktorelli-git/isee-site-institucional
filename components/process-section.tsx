@@ -27,7 +27,7 @@ const processSteps = [
     details: [
       "Documento de especificação técnica",
       "Cronograma detalhado de entregas",
-      "Definição de marcos e milestones",
+      "Definição de marcos e etapas",
       "Orçamento transparente e fixo",
     ],
     color: "bg-accent",
@@ -64,7 +64,7 @@ const processSteps = [
     title: "Entrega",
     description: "Implantação e suporte garantido",
     details: [
-      "Implantação em ambiente de produção SaaS",
+      "Implantação em ambiente de produção",
       "Treinamento da equipe usuária",
       "Documentação técnica completa",
       "Suporte e manutenção continuada",

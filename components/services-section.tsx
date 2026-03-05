@@ -17,7 +17,7 @@ import {Button} from "@/components/ui/button";
 const services = [
 	{
 		icon: GitGraph,
-		title: "Controle de Processos",
+		title: "Controle de processos",
 		description:
 			"Transforme fluxos manuais em processos automatizados e inteligentes. Aumente produtividade, reduza erros operacionais e ganhe visibilidade total em tempo real.",
 	},
@@ -29,27 +29,27 @@ const services = [
 	},
 	{
 		icon: Lock,
-		title: "Controle de Acesso e Rastreabilidade",
+		title: "Controle de acesso e rastreabilidade",
 		description:
 			"Proteja dados sensíveis com permissões granulares e alçadas inteligentes. Mantenha conformidade regulatória e auditoria completa de todas as operações.",
 	},
 
 	{
 		icon: DollarSign,
-		title: "Orçamento e Gestão de Custos",
+		title: "Orçamento e gestão de custos",
 		description:
 			"Planeje com precisão e controle cada centavo do seu orçamento. Identifique oportunidades de economia, otimize alocação de recursos e maximize rentabilidade.",
 	},
 	{
 		icon: Banknote,
-		title: "Controle Financeiro e Gestão de Estoque",
+		title: "Controle financeiro e estoque",
 		description:
 			"Gerencie fluxo de caixa, estoque e capital de giro integrados. Automatize pagamentos, recebimentos, controle de inventário e obtenha visibilidade completa do caixa.",
 	},
 
 	{
 		icon: Target,
-		title: "Dashboards & Indicadores",
+		title: "Dashboards",
 		description:
 			"Converta dados brutos em insights estratégicos e visuais impactantes. Acompanhe performance em tempo real e tome decisões baseadas em inteligência.",
 	},
@@ -130,14 +130,18 @@ export function ServicesSection() {
 				>
 					<div className="inline-block bg-accent/20 rounded-xl px-8 py-6 border-2 border-accent/30 max-w-2xl">
 						<p className="text-foreground font-semibold text-lg mb-2">
-							Acima destacamos possíveis abordagens.
+							Estes são alguns exemplos de soluções que podemos desenvolver para
+							sua realidade.
 						</p>
 						<p className="text-muted-foreground">
-							Temos expertise para desenhar e desenvolver sistemas customizados que
+							Temos expertise para desenhar e desenvolver sistemas sob medida que
 							resolvem seus desafios específicos de gestão, automação e integração.
 						</p>
 						<p className="text-muted-foreground">
-							<span className="font-semibold text-foreground"> Entre em contato e descreva a sua demanda.</span>
+							<span className="font-semibold text-foreground"> Entre em contato
+								e descreva sua demanda. Vamos propor o caminho mais seguro
+								e eficiente.
+							</span>
 						</p>
 						<a href="#contato" className="mt-6 inline-block">
 							<Button
