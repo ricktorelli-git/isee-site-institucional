@@ -140,21 +140,6 @@ export function HeroSection() {
               />
             </span>
           </h1>
-
-          <h2
-            className="text-sm md:text-2xl text-white/85 max-w-3xl mx-auto mb-8 md:mb-15 leading-relaxed font-medium mt-8 md:mt-0 px-4 md:px-0"
-            style={{
-              animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.3s forwards" : "none",
-              opacity: 0,
-            }}
-          >
-            Soluções com base em{" "}
-            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold whitespace-nowrap">
-              35+ anos
-            </span>{" "}
-            de experiência em gestão.
-          </h2>
-
           <p
               className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-15 leading-relaxed"
               style={{
