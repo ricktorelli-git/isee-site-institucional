@@ -20,9 +20,11 @@ export function FounderSection() {
             Gestão corporativa antes do código
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A Iseecodes surgiu da vivência real no campo de batalha corporativo de alta performance.</p>
+            A Iseecodes nasceu da minha vivência real no campo de batalha corporativo de alta performance.
+          </p>
+
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Esse é o fundamento que sustenta cada solução desenvolvida.
+            Esse é o fundamento por trás de cada solução tecnológica que entregamos.
           </p>
         </div>
 
@@ -36,7 +38,7 @@ export function FounderSection() {
                 <figure className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src="/socio-fundador.jpeg"
-                    alt="Ricardo Tortorelli, Contador e Sócio Proprietário da Iseecodes"
+                    alt="Ricardo Tortorelli, Contador e Sócio-fundador da Iseecodes"
                     className="w-full aspect-4/5 object-cover"
                     loading="lazy"
                     decoding="async"
@@ -46,8 +48,8 @@ export function FounderSection() {
                     aria-hidden="true"
                   />
                   <figcaption className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="text-2xl font-bold text-white block">Ricardo Costa Tortorelli</span>
-                    <span className="text-white/80">Sócio Proprietário</span>
+                    <span className="text-2xl font-bold text-white block">Ricardo Tortorelli</span>
+                    <span className="text-white/80">Sócio-fundador</span>
                   </figcaption>
                 </figure>
 
@@ -87,11 +89,11 @@ export function FounderSection() {
               <blockquote className="relative mb-6">
                 <Quote className="absolute -left-2 -top-2 w-10 h-10 text-primary/20" aria-hidden="true" />
                 <p className="pl-8 text-lg text-muted-foreground leading-relaxed italic">
-                  &ldquo;Minha trajetória por décadas na gestão de um grande fundo de previdência
-                  complementar no Brasil, proporcionou uma visão completa de processos em ambientes
-                  corporativos de alta performance. Na Iseecodes, transformamos
-                  essa experiência em soluções tecnológicas que realmente entendem os desafios de
-                  gestão do cliente.&rdquo;
+                  &ldquo;Depois de décadas atuando na gestão de um dos grandes fundos de previdência
+                  complementar no Brasil, compreendi de perto os desafios reais da gestão corporativa
+                  de alta performance. A Iseecodes nasceu dessa experiência: uma software house dedicada
+                  a transformar esse conhecimento em soluções tecnológicas robustas, desenvolvidas
+                  para aprimorar processos, apoiar decisões e gerar valor para nossos clientes.&rdquo;
                 </p>
               </blockquote>
 
@@ -101,8 +103,9 @@ export function FounderSection() {
                   ✓ Gestão antes do código. Eis nossa vantagem competitiva.
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Não desenvolvemos tecnologia genérica, vivenciamos a realidade de gestão e criamos
-                  soluções especializadas que resolvem problemas reais.
+                  Não construímos tecnologia genérica. Traduzo a realidade da gestão corporativa em
+                  soluções de software especializadas, criadas para resolver problemas reais de
+                  gestão e apoiar decisões com mais eficiência e inteligência e solidez.
                 </p>
               </div>
 
@@ -113,7 +116,7 @@ export function FounderSection() {
                   <div className="font-semibold text-foreground">Representatividade Nacional</div>
                   <div className="text-sm text-muted-foreground">
                     Por quase <span className="font-medium text-foreground">10 anos</span>, paralelamente
-                    à atividade profissional, atuou como membro da
+                    à atividade profissional, atuei como membro da
                     <span className="font-medium text-foreground">
                       {" "}
                       Comissão Técnica Nacional de Contabilidade da ABRAPP
@@ -140,7 +143,7 @@ export function FounderSection() {
               <PiggyBank className="w-6 h-6 text-primary mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <div className="font-semibold text-foreground text-sm">Gestão Financeira</div>
-                <div className="text-xs text-muted-foreground mt-1">Especialidade principal</div>
+                <div className="text-xs text-muted-foreground mt-1">Experiência prática em gestão de recursos e sustentabilidade financeira</div>
               </div>
             </div>
 
@@ -155,7 +158,7 @@ export function FounderSection() {
               <Building2 className="w-6 h-6 text-primary mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <div className="font-semibold text-foreground text-sm">Controladoria</div>
-                <div className="text-xs text-muted-foreground mt-1">Governança como fundamento</div>
+                <div className="text-xs text-muted-foreground mt-1">Governança, controle e tomada de decisão baseada em dados</div>
               </div>
             </div>
 
@@ -170,7 +173,7 @@ export function FounderSection() {
               <BookOpen className="w-6 h-6 text-accent mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <div className="font-semibold text-foreground text-sm">Contabilidade</div>
-                <div className="text-xs text-muted-foreground mt-1">Técnica apurada</div>
+                <div className="text-xs text-muted-foreground mt-1">Rigor técnico aplicado à estrutura financeira das organizações</div>
               </div>
             </div>
 
@@ -185,7 +188,7 @@ export function FounderSection() {
               <TrendingUp className="w-6 h-6 text-accent mt-0.5 shrink-0" aria-hidden="true" />
               <div>
                 <div className="font-semibold text-foreground text-sm">Conselho Fiscal</div>
-                <div className="text-xs text-muted-foreground mt-1">Visão estratégica</div>
+                <div className="text-xs text-muted-foreground mt-1">Visão estratégica para avaliação e fiscalização corporativa</div>
               </div>
             </div>
           </div>

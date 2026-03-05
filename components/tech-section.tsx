@@ -18,37 +18,37 @@ import {
 const pillars = [
   {
     name: "Segurança",
-    description: "Múltiplas camadas de proteção",
+    description: "Proteção em camadas e boas práticas",
     icon: Shield,
     color: "#0080C1",
   },
   {
     name: "Estabilidade",
-    description: "Disponibilidade 24/7",
+    description: "Monitoramento 24/7 e alta disponibilidade",
     icon: Server,
     color: "#005484",
   },
   {
     name: "Backups",
-    description: "Rotinas automáticas diárias",
+    description: "Backups automáticos com rotina definida",
     icon: Database,
     color: "#F58634",
   },
   {
     name: "Recuperação",
-    description: "Disaster recovery garantido",
+    description: "Plano de recuperação e testes de restore",
     icon: RefreshCw,
     color: "#0080C1",
   },
   {
     name: "Suporte",
-    description: "Atendimento especializado",
+    description: "Atendimento técnico e acompanhamento",
     icon: Headphones,
     color: "#005484",
   },
   {
     name: "Escalabilidade",
-    description: "Cresce com seu negócio",
+    description: "Arquitetura pronta para crescer",
     icon: TrendingUp,
     color: "#F58634",
   },
@@ -58,36 +58,35 @@ const benefits = [
   {
     title: "Proteção em Camadas",
     description:
-      "Firewalls, criptografia SSL/TLS, autenticação multifator e monitoramento constante de vulnerabilidades.",
+        "Firewalls, criptografia TLS e monitoramento contínuo de vulnerabilidades.",
     icon: Lock,
   },
   {
     title: "Infraestrutura na Nuvem",
-    description: "Servidores redundantes e distribuídos geograficamente para garantir máxima disponibilidade.",
+    description: "Recursos redundantes e escaláveis, dimensionados conforme a necessidade do projeto.",
     icon: Cloud,
   },
   {
     title: "Performance Otimizada",
-    description: "Cache inteligente, CDN global e otimizações contínuas para tempos de resposta mínimos.",
+    description: "Cache, CDN e otimizações contínuas para manter tempos de resposta consistentes.",
     icon: Zap,
   },
   {
     title: "Backups Automatizados",
-    description: "Cópias diárias incrementais e semanais completas, com retenção de 30 dias e restore testado.",
+    description: "Cópias incrementais diárias e completas semanais, com retenção configurável e restore testado.",
     icon: Database,
   },
   {
     title: "Monitoramento 24/7",
-    description: "Alertas proativos, métricas em tempo real e resposta imediata a qualquer incidente.",
+    description: "Alertas proativos, métricas em tempo real e resposta rápida a incidentes.",
     icon: Server,
   },
   {
     title: "Crescimento Sob Demanda",
-    description: "Arquitetura elástica que escala automaticamente conforme a demanda do seu negócio.",
+    description: "Arquitetura elástica preparada para acompanhar o crescimento e picos de uso.",
     icon: TrendingUp,
   },
 ]
-
 const PillarCard = memo(function PillarCard({
   pillar,
   index,
@@ -146,7 +145,7 @@ const BenefitItem = memo(function BenefitItem({
       )}
       style={{ animationDelay: `${index * 100 + 300}ms`, animationFillMode: "both" }}
     >
-      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mt-0.5">
+      <div className="shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mt-0.5">
         <Icon className="w-5 h-5 text-accent" />
       </div>
       <div>
@@ -165,27 +164,27 @@ export function TechSection() {
 
   return (
     <section id="tecnologias" className="py-24 bg-secondary overflow-hidden relative" ref={ref}>
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/5 pointer-events-none" />
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-            Infraestrutura Robusta
+            “Engenharia e Confiabilidade”
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
-            Sua Tranquilidade é Nossa <span className="text-accent">Prioridade</span>
+            Sua Tranquilidade é nossa <span className="text-accent">prioridade</span>
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Desenvolvemos soluções pensando em cada camada de proteção, garantindo que seu negócio opere com segurança,
-            estabilidade e total suporte técnico.
+            Projetamos e desenvolvemos sistemas sob medida com foco em segurança, estabilidade e
+            evolução contínua — da arquitetura ao monitoramento
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <div className="flex-1">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
               {pillars.map((pillar, index) => (
                 <PillarCard key={pillar.name} pillar={pillar} index={index} inView={inView} />
               ))}
