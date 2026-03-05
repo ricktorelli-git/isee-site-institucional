@@ -164,9 +164,9 @@ export function ContactSection() {
 
       // Send email using EmailJS
       await emailjs.send(serviceId, templateId, {
-        from_name: formData.fullName,
-        from_email: formData.email,
-        from_phone: formData.phone,
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
         company: formData.company || "Não informado",
         message: formData.message,
         to_email: "contato@iseecodes.com.br", // Substitua pelo seu email
