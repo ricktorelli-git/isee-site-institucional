@@ -31,7 +31,7 @@ export function FounderSection() {
             Gestão corporativa antes do código
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            A Iseecodes nasceu da minha vivência real no campo de batalha corporativo de alta performance.
+            A Iseecodes nasceu da minha vivência real no "campo de batalha" corporativo de alta performance.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed">
@@ -135,7 +135,7 @@ export function FounderSection() {
                 <p className="text-sm text-muted-foreground mt-2">
                   Não construímos tecnologia genérica. Traduzo a realidade da gestão corporativa em
                   soluções de software especializadas, criadas para resolver problemas reais de
-                  gestão e apoiar decisões com mais eficiência e inteligência e solidez.
+                  gestão e apoiar decisões com mais eficiência, inteligência e solidez.
                 </p>
               </div>
 
