@@ -2,6 +2,7 @@
 import { useInView } from "react-intersection-observer"
 import { cn } from "@/lib/utils"
 import { memo } from "react"
+import { Button } from "@/components/ui/button"
 import {
   Shield,
   Server,
@@ -13,6 +14,7 @@ import {
   Cloud,
   Zap,
   CheckCircle2,
+  ArrowRight,
 } from "lucide-react"
 
 const pillars = [
@@ -199,6 +201,31 @@ export function TechSection() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-16 flex justify-center">
+          <a href="#contato" className="w-full sm:w-auto flex justify-center">
+            <Button
+              size="lg"
+              className={cn(
+                "relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-5 md:py-6 text-base md:text-lg group",
+                inView && "animate-in fade-in slide-in-from-bottom-4",
+              )}
+              style={{ animationDelay: "800ms", animationFillMode: "both" }}
+            >
+              <span className="relative z-10 flex items-center justify-center">
+                Entrar em Contato
+                <ArrowRight
+                  className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </span>
+              <span
+                className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite] motion-reduce:animate-none"
+                aria-hidden="true"
+              />
+            </Button>
+          </a>
         </div>
       </div>
     </section>
