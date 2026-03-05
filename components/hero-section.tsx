@@ -122,31 +122,22 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <div
-            className={`inline-flex items-center gap-3 bg-white/10 backdrop-blur-md rounded-full px-6 py-2.5 mt-24 mb-14 border border-white/10 transition-all duration-500 overflow-hidden ${
-              isScrolled ? "opacity-0 -translate-y-5 pointer-events-none" : "opacity-100 translate-y-0"
-            }`}
-            style={{
-              animation: isLoaded && !isScrolled ? "fadeSlideUp 0.8s ease-out forwards" : "none",
-            }}
+          <h2
+              className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto mb-15 leading-relaxed font-medium"
+              style={{
+                animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.3s forwards" : "none",
+                opacity: 0,
+              }}
           >
-            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-            <div className="relative overflow-hidden w-60 sm:w-65">
-              <span className="inline-block text-white/90 text-sm font-medium tracking-wide whitespace-nowrap animate-[marquee_8s_linear_infinite]">
-                Sistemas de gestão sob medida.
-              </span>
-            </div>
-            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-            </span>
-          </div>
+            Soluções com base em{" "}
+            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold">
+              35+ anos
+            </span>{" "}
+            de experiência em gestão.
+          </h2>
 
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 min-h-[1.2em] md:min-h-[1.5em]"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-10 min-h-[1.2em] md:min-h-[1.5em]"
             style={{
               animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.2s forwards" : "none",
               opacity: 0,
@@ -162,7 +153,7 @@ export function HeroSection() {
             </span>
           </h1>
           <p
-              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
+              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-15 leading-relaxed"
               style={{
                 animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.4s forwards" : "none",
                 opacity: 0,
