@@ -77,7 +77,7 @@ export function ServicesSection() {
 						id="servicos-titulo"
 						className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
 					>
-						Soluções completas para sua transformação digital
+						Software sob medida para gestão, automação e integração de processos.
 					</h2>
 					<p className="text-muted-foreground text-lg leading-relaxed">
 						Desenvolvemos softwares web e mobile com foco em gestão empresarial,
