@@ -81,7 +81,7 @@ export function Header() {
               className={cn("text-2xl font-bold transition-all duration-500", isScrolled ? "text-white" : "text-white")}
             >
               <span className={cn("transition-all duration-500", isScrolled ? "text-secondary" : "text-accent")}>
-                isee
+                Isee
               </span>
               codes
             </span>

@@ -80,7 +80,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center mb-6" aria-label="Iseecodes - Voltar ao início">
               <span className="text-2xl font-bold text-white">
-                <span className="text-accent">isee</span>codes
+                <span className="text-accent">Isee</span>codes
               </span>
             </a>
             <p className="text-white/60 max-w-md leading-relaxed mb-6">

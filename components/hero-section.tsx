@@ -161,27 +161,24 @@ export function HeroSection() {
               />
             </span>
           </h1>
-
           <p
-            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed"
-            style={{
-              animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.4s forwards" : "none",
-              opacity: 0,
-            }}
+              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed"
+              style={{
+                animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.4s forwards" : "none",
+                opacity: 0,
+              }}
           >
-            Fuja da solução genérica e abrace o poder do software sob demanda. Na{" "}
+            Fuja das soluções genéricas. Na{" "}
             <span className={cn("font-semibold", isScrolled ? "text-white" : "text-white")}>
-              <span className={cn("transition-all duration-500", isScrolled ? "text-secondary" : "text-accent")}>
-                isee
+              <span className={cn("transition-all duration-500", "text-accent")}>
+                Isee
               </span>
               codes
-            </span>
-            , unimos tecnologia e expertise para criar soluções com software especializados, porêm
-            escaláveis, possibilitando a redução do custo de desenvolvimento e de implantação.
-          </p>
+            </span>, a gestão vem antes da tecnologia. Desenvolvemos sistemas sob medida que
+            automatizam processos, integram dados e resolvem desafios reais de gestão.</p>
 
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-15"
             style={{
               animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.6s forwards" : "none",
               opacity: 0,
