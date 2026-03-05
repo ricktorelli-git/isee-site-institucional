@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { Linkedin, Instagram, Github, Mail, Phone, MapPin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa6"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -12,28 +14,30 @@ const navLinks = [
 ]
 
 const whatsappNumber = "5551999698812"
-const whatsappMessage = "Ola, vim pelo site da Iseecodes e gostaria de falar sobre um projeto."
+const whatsappMessage = "Olá, vim pelo site [ISEECODES] e gostaria de falar sobre um projeto."
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
 const contactItems = [
   {
     icon: Mail,
     text: "contato@iseecodes.com.br",
-    animation: "animate-wiggle",
+    animation: "wiggle",
     href: "mailto:contato@iseecodes.com.br",
     ariaLabel: "Enviar email para contato@iseecodes.com.br",
+    hoverLabel: "Envie um email",
   },
   {
-    icon: Phone,
+    icon: FaWhatsapp,
     text: "+55 (51) 99969-8812",
-    animation: "animate-ring",
+    animation: "ring",
     href: whatsappHref,
     ariaLabel: "Conversar no WhatsApp com a Iseecodes (abre em nova aba)",
+    hoverLabel: "Abrir conversa no WhatsApp",
   },
   {
     icon: MapPin,
     text: "Porto Alegre, RS - Brasil",
-    animation: "animate-bounce-subtle",
+    animation: "bounce-subtle",
     href: null,
     ariaLabel: "Localização: Porto Alegre, RS - Brasil",
   },
@@ -74,9 +78,6 @@ export function Footer() {
           50% { transform: translateY(0); }
           75% { transform: translateY(-2px); }
         }
-        .animate-wiggle { animation: wiggle 0.6s ease-in-out infinite; }
-        .animate-ring { animation: ring 0.6s ease-in-out infinite; }
-        .animate-bounce-subtle { animation: bounce-subtle 0.6s ease-in-out infinite; }
       `}</style>
 
       <div className="container mx-auto px-4 lg:px-8">
@@ -158,9 +159,8 @@ export function Footer() {
                 const content = (
                   <>
                     <div
-                      className={`w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110 ${
-                        isHovered ? item.animation : ""
-                      }`}
+                      className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110"
+                      style={isHovered ? { animation: `${item.animation} 0.6s ease-in-out infinite` } : undefined}
                       aria-hidden="true"
                     >
                       <Icon className="w-4 h-4 text-accent" />
@@ -177,15 +177,24 @@ export function Footer() {
                     onMouseLeave={handleContactLeave}
                   >
                     {item.href ? (
-                      <a
-                        href={item.href}
-                        className="flex items-center gap-3"
-                        aria-label={item.ariaLabel}
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      >
-                        {content}
-                      </a>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a
+                            href={item.href}
+                            className="flex items-center gap-3"
+                            aria-label={item.ariaLabel}
+                            target={item.href.startsWith("http") ? "_blank" : undefined}
+                            rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          >
+                            {content}
+                          </a>
+                        </TooltipTrigger>
+                        {item.hoverLabel ? (
+                          <TooltipContent side="top" sideOffset={8}>
+                            {item.hoverLabel}
+                          </TooltipContent>
+                        ) : null}
+                      </Tooltip>
                     ) : (
                       <span className="flex items-center gap-3 cursor-default" aria-label={item.ariaLabel}>
                         {content}
