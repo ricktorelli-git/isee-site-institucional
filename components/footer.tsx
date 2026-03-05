@@ -11,6 +11,10 @@ const navLinks = [
   { href: "#contato", label: "Contato" },
 ]
 
+const whatsappNumber = "5551999698812"
+const whatsappMessage = "Ola, vim pelo site da Iseecodes e gostaria de falar sobre um projeto."
+const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+
 const contactItems = [
   {
     icon: Mail,
@@ -23,8 +27,8 @@ const contactItems = [
     icon: Phone,
     text: "+55 (51) 99969-8812",
     animation: "animate-ring",
-    href: "tel:+5551999698812",
-    ariaLabel: "Ligar para +55 51 99969-8812",
+    href: whatsappHref,
+    ariaLabel: "Conversar no WhatsApp com a Iseecodes (abre em nova aba)",
   },
   {
     icon: MapPin,
@@ -173,7 +177,13 @@ export function Footer() {
                     onMouseLeave={handleContactLeave}
                   >
                     {item.href ? (
-                      <a href={item.href} className="flex items-center gap-3" aria-label={item.ariaLabel}>
+                      <a
+                        href={item.href}
+                        className="flex items-center gap-3"
+                        aria-label={item.ariaLabel}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      >
                         {content}
                       </a>
                     ) : (
