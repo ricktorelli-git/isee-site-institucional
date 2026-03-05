@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react"
 import { Mail, MapPin } from "lucide-react"
 import { FaWhatsapp } from "react-icons/fa6"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Tooltip, TooltipTrigger } from "@/components/ui/tooltip"
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -38,7 +38,9 @@ const contactItems = [
     text: "Porto Alegre, RS - Brasil",
     animation: "bounce-subtle",
     href: null,
-    ariaLabel: "Localização: Porto Alegre, RS - Brasil",
+    ariaLabel: "Sede Fiscal: Porto Alegre, RS - Brasil. Atendimento Remoto em todo o Brasil.",
+    subtitle: "Atendimento Remoto em todo o Brasil",
+    isLocation: true,
   },
 ]
 
@@ -174,9 +176,23 @@ export function Footer() {
                     >
                       <Icon className="w-4 h-4 text-accent" />
                     </div>
-                    <div className="flex flex-col">
-                      <span className="group-hover:text-white transition-colors">{item.text}</span>
-                      {item.subtitle && isHovered && (
+                    <div className="flex flex-col gap-1">
+                      {item.isLocation ? (
+                        <>
+                          <span className="group-hover:text-white transition-colors text-sm whitespace-nowrap">
+                            <span className="font-semibold text-accent">Sede Fiscal:</span> Porto Alegre, RS
+                          </span>
+                          <span
+                            className="text-xs text-accent font-medium transition-all duration-300"
+                            aria-hidden="true"
+                          >
+                            Atendimento Remoto em todo o Brasil
+                          </span>
+                        </>
+                      ) : (
+                        <span className="group-hover:text-white transition-colors">{item.text}</span>
+                      )}
+                      {item.subtitle && !item.isLocation && isHovered && (
                         <span
                           className="text-xs text-accent/80 font-medium mt-1 transition-all duration-300"
                           style={{
