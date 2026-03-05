@@ -125,7 +125,7 @@ export function HeroSection() {
 
 
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-10 min-h-[1.2em] md:min-h-[1.5em]"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-15 min-h-[1.2em] md:min-h-[1.5em]"
             style={{
               animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.2s forwards" : "none",
               opacity: 0,
