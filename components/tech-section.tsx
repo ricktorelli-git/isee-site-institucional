@@ -101,7 +101,7 @@ const PillarCard = memo(function PillarCard({
   return (
     <div
       className={cn(
-        "group relative p-6 rounded-2xl transition-all duration-300",
+        "group relative p-6 rounded-2xl transition-all duration-300 h-full flex flex-col",
         "bg-[#005484]/40 border border-white/10",
         "hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1",
         inView && "animate-in fade-in zoom-in-95",
@@ -184,16 +184,16 @@ export function TechSection() {
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <div className="flex-1">
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 h-full">
               {pillars.map((pillar, index) => (
                 <PillarCard key={pillar.name} pillar={pillar} index={index} inView={inView} />
               ))}
             </div>
           </div>
 
-          <div className="flex-1 max-w-xl">
+          <div className="flex-1 max-w-xl flex flex-col">
             <h3 className="text-2xl font-bold text-white mb-8">O que você pode esperar da nossa arquitetura.</h3>
-            <ul className="space-y-5">
+            <ul className="space-y-4 flex-1">
               {benefits.map((benefit, index) => (
                 <BenefitItem key={benefit.title} benefit={benefit} index={index} inView={inView} />
               ))}

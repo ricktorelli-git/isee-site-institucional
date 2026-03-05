@@ -202,8 +202,11 @@ export function ContactSection() {
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Vamos conversar sobre seu projeto?</h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-              Preencha o formulário abaixo e nossa equipe entrará em contato para entender suas necessidades e
-              transformar suas ideias em realidade.
+              Conte brevemente sua necessidade e entraremos em contato para entender seu projeto e
+              avaliar como um sistema sob medida pode ajudar sua empresa.
+            </p>
+            <p className="text-primary/90 text-sm md:text-base mt-6 px-4 md:px-0 max-w-2xl mx-auto font-semibold">
+              Respondemos normalmente em até 1 dia útil.
             </p>
           </div>
 

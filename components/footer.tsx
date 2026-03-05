@@ -22,17 +22,16 @@ const contactItems = [
     icon: Mail,
     text: "contato@iseecodes.com.br",
     animation: "wiggle",
-    href: "mailto:contato@iseecodes.com.br",
-    ariaLabel: "Enviar email para contato@iseecodes.com.br",
-    hoverLabel: "Envie um email",
+    href: null,
+    ariaLabel: "Email: contato@iseecodes.com.br",
   },
   {
     icon: FaWhatsapp,
     text: "+55 (51) 99969-8812",
     animation: "ring",
     href: whatsappHref,
-    ariaLabel: "Conversar no WhatsApp com a Iseecodes (abre em nova aba)",
-    hoverLabel: "Abrir conversa no WhatsApp",
+    ariaLabel: "Conversar no WhatsApp com o sócio-fundador da Iseecodes (abre em nova aba)",
+    subtitle: "Contato direto com o sócio-fundador",
   },
   {
     icon: MapPin,
@@ -77,6 +76,16 @@ export function Footer() {
           25% { transform: translateY(-4px); }
           50% { transform: translateY(0); }
           75% { transform: translateY(-2px); }
+        }
+        @keyframes fadeSlideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-4px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
 
@@ -165,7 +174,20 @@ export function Footer() {
                     >
                       <Icon className="w-4 h-4 text-accent" />
                     </div>
-                    <span className="group-hover:text-white transition-colors">{item.text}</span>
+                    <div className="flex flex-col">
+                      <span className="group-hover:text-white transition-colors">{item.text}</span>
+                      {item.subtitle && isHovered && (
+                        <span
+                          className="text-xs text-accent/80 font-medium mt-1 transition-all duration-300"
+                          style={{
+                            animation: "fadeSlideDown 0.3s ease-out forwards",
+                          }}
+                          aria-hidden="true"
+                        >
+                          {item.subtitle}
+                        </span>
+                      )}
+                    </div>
                   </>
                 )
 
@@ -189,11 +211,6 @@ export function Footer() {
                             {content}
                           </a>
                         </TooltipTrigger>
-                        {item.hoverLabel ? (
-                          <TooltipContent side="top" sideOffset={8}>
-                            {item.hoverLabel}
-                          </TooltipContent>
-                        ) : null}
                       </Tooltip>
                     ) : (
                       <span className="flex items-center gap-3 cursor-default" aria-label={item.ariaLabel}>
