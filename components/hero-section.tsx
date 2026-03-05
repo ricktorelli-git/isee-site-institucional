@@ -84,7 +84,7 @@ export function HeroSection() {
     <section
       id="inicio"
       aria-label="Seção principal - Iseecodes Software House"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-secondary"
+      className="relative min-h-[calc(100svh-5rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-secondary pt-24 md:pt-20 pb-6 md:pb-0"
     >
       <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <div
@@ -120,12 +120,12 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-center">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-start md:justify-center">
         <div className="max-w-4xl mx-auto text-center">
 
 
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-15 min-h-[1.2em] md:min-h-[1.5em]"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 md:mb-10 min-h-[1.2em] md:min-h-[1.5em]"
             style={{
               animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.2s forwards" : "none",
               opacity: 0,
@@ -140,8 +140,15 @@ export function HeroSection() {
               />
             </span>
           </h1>
+            Soluções com base em{" "}
+            <span className="inline-block px-2 py-0.5 rounded-md bg-accent/20 text-accent font-bold whitespace-nowrap">
+              35+ anos
+            </span>{" "}
+            de experiência em gestão.
+          </h2>
+
           <p
-              className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-15 leading-relaxed"
+              className="text-sm sm:text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed px-2 md:px-0"
               style={{
                 animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.4s forwards" : "none",
                 opacity: 0,
@@ -157,19 +164,19 @@ export function HeroSection() {
             automatizam processos, integram dados e resolvem desafios reais de gestão.</p>
 
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-15"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 md:mb-12"
             style={{
               animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.6s forwards" : "none",
               opacity: 0,
             }}
           >
-            <a href="#contato">
+            <a href="#contato" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg group"
+                className="relative overflow-hidden w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-5 md:py-6 text-base md:text-lg group"
                 aria-label="Solicitar orçamento para evoluir sua gestão"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center justify-center">
                   Entrar em Contato
                   <ArrowRight
                     className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
@@ -177,16 +184,16 @@ export function HeroSection() {
                   />
                 </span>
                 <span
-                  className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite]"
+                  className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite] motion-reduce:animate-none"
                   aria-hidden="true"
                 />
               </Button>
             </a>
-            <a href="#servicos">
+            <a href="#servicos" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg bg-transparent backdrop-blur-sm group"
+                className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 px-8 py-5 md:py-6 text-base md:text-lg bg-transparent backdrop-blur-sm group"
                 aria-label="Ver nossos serviços de desenvolvimento"
               >
                 <span className="group-hover:tracking-wider transition-all duration-300">Conhecer Serviços</span>
@@ -196,7 +203,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
+      <div className="hidden md:block absolute bottom-4 left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
         <div className="relative">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center pt-1">
             <ChevronDown className="w-4 h-4 text-accent animate-[scrollBounce_1.5s_ease-in-out_infinite]" />
