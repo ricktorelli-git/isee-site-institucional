@@ -18,37 +18,37 @@ import {
 const pillars = [
   {
     name: "Segurança",
-    description: "Proteção em camadas e boas práticas",
+    description: "Proteção em camadas baseada em boas práticas de segurança.",
     icon: Shield,
     color: "#0080C1",
   },
   {
     name: "Estabilidade",
-    description: "Monitoramento 24/7 e alta disponibilidade",
+    description: "Monitoramento contínuo e arquitetura projetada para alta disponibilidade.",
     icon: Server,
     color: "#005484",
   },
   {
     name: "Backups",
-    description: "Backups automáticos com rotina definida",
+    description: "Backups automáticos com rotinas e políticas definidas.",
     icon: Database,
     color: "#F58634",
   },
   {
     name: "Recuperação",
-    description: "Plano de recuperação e testes de restore",
+    description: "Planos de recuperação e procedimentos de restore testados.",
     icon: RefreshCw,
     color: "#0080C1",
   },
   {
     name: "Suporte",
-    description: "Atendimento técnico e acompanhamento",
+    description: "Acompanhamento técnico e suporte especializado.",
     icon: Headphones,
     color: "#005484",
   },
   {
     name: "Escalabilidade",
-    description: "Arquitetura pronta para crescer",
+    description: "Arquitetura preparada para crescer conforme a demanda.",
     icon: TrendingUp,
     color: "#F58634",
   },
@@ -58,32 +58,32 @@ const benefits = [
   {
     title: "Proteção em Camadas",
     description:
-        "Firewalls, criptografia TLS e monitoramento contínuo de vulnerabilidades.",
+        "Firewalls, criptografia TLS e práticas contínuas de monitoramento de segurança.",
     icon: Lock,
   },
   {
     title: "Infraestrutura na Nuvem",
-    description: "Recursos redundantes e escaláveis, dimensionados conforme a necessidade do projeto.",
+    description: "Recursos redundantes e escaláveis, dimensionados conforme as necessidades do projeto.",
     icon: Cloud,
   },
   {
     title: "Performance Otimizada",
-    description: "Cache, CDN e otimizações contínuas para manter tempos de resposta consistentes.",
+    description: "Uso de cache, CDN e otimizações contínuas para manter tempos de resposta consistentes.",
     icon: Zap,
   },
   {
     title: "Backups Automatizados",
-    description: "Cópias incrementais diárias e completas semanais, com retenção configurável e restore testado.",
+    description: "Backups incrementais diários e completos semanais, com retenção configurável e procedimentos de restore testados.",
     icon: Database,
   },
   {
-    title: "Monitoramento 24/7",
-    description: "Alertas proativos, métricas em tempo real e resposta rápida a incidentes.",
+    title: "Monitoramento Operacional",
+    description: "Alertas proativos, métricas em tempo real e resposta técnica quando necessário.",
     icon: Server,
   },
   {
     title: "Crescimento Sob Demanda",
-    description: "Arquitetura elástica preparada para acompanhar o crescimento e picos de uso.",
+    description: "Arquitetura preparada para acompanhar o crescimento e variações de uso.",
     icon: TrendingUp,
   },
 ]
@@ -174,11 +174,11 @@ export function TechSection() {
             “Engenharia e Confiabilidade”
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
-            Sua Tranquilidade é nossa <span className="text-accent">prioridade</span>
+            Arquitetura pensada para operar com segurança, estabilidade e evolução contínua.
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Projetamos e desenvolvemos sistemas sob medida com foco em segurança, estabilidade e
-            evolução contínua — da arquitetura ao monitoramento
+            Projetamos e desenvolvemos sistemas sob medida com foco em boas práticas de engenharia,
+            da arquitetura à operação e monitoramento.
           </p>
         </div>
 
@@ -192,7 +192,7 @@ export function TechSection() {
           </div>
 
           <div className="flex-1 max-w-xl">
-            <h3 className="text-2xl font-bold text-white mb-8">O que garantimos para você</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">O que você pode esperar de nossa arquitetura.</h3>
             <ul className="space-y-5">
               {benefits.map((benefit, index) => (
                 <BenefitItem key={benefit.title} benefit={benefit} index={index} inView={inView} />
