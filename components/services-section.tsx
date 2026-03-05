@@ -150,7 +150,7 @@ export function ServicesSection() {
 								aria-label="Solicitar orçamento para evoluir sua gestão"
 							>
                				 <span className="relative z-10 flex items-center">
-                  				Evoluir Minha Gestão
+                  				Entrar em Contato
                   				<ArrowRight
 					  				className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
 					  				aria-hidden="true"

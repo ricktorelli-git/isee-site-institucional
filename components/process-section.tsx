@@ -213,6 +213,7 @@ export function ProcessSection() {
             <span className="text-white font-medium">Transparência e comunicação em todas as etapas</span>
           </div>
         </div>
+
       </div>
     </section>
   )

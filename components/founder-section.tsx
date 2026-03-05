@@ -1,8 +1,19 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { Quote, Award, Building2, TrendingUp, GraduationCap, Users, BookOpen, PiggyBank } from "lucide-react"
+import {
+  Quote,
+  Award,
+  Building2,
+  TrendingUp,
+  GraduationCap,
+  Users,
+  BookOpen,
+  PiggyBank,
+  ArrowRight
+} from "lucide-react"
 import { cn } from "@/lib/utils"
+import {Button} from "@/components/ui/button";
 
 export function FounderSection() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
@@ -26,6 +37,25 @@ export function FounderSection() {
           <p className="text-lg text-muted-foreground leading-relaxed">
             Esse é o fundamento por trás de cada solução tecnológica que entregamos.
           </p>
+          <a href="#contato" className="mt-6 inline-block">
+            <Button
+                size="lg"
+                className="relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg group"
+                aria-label="Solicitar orçamento para evoluir sua gestão"
+            >
+               				 <span className="relative z-10 flex items-center">
+                  				Entrar em Contato
+                  				<ArrowRight
+                                    className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+                                    aria-hidden="true"
+                                />
+							</span>
+              <span
+                  className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite]"
+                  aria-hidden="true"
+              />
+            </Button>
+          </a>
         </div>
 
         {/* Main Content Grid */}
@@ -193,7 +223,6 @@ export function FounderSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )

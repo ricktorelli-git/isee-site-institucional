@@ -138,7 +138,7 @@ export function Header() {
                     : "bg-accent hover:bg-accent/90 text-accent-foreground hover:shadow-[0_0_20px_rgba(245,134,52,0.4)]",
                 )}
               >
-                Solicitar Orçamento
+                Entrar em Contato
               </Button>
             </a>
           </div>
@@ -190,7 +190,7 @@ export function Header() {
                         : "bg-accent hover:bg-accent/90 text-accent-foreground",
                     )}
                   >
-                    Solicitar Orçamento
+                    Entrar em Contato
                   </Button>
                 </a>
               </div>
