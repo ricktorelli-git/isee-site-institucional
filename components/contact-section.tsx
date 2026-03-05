@@ -11,6 +11,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import emailjs from "@emailjs/browser"
 
+// Initialize EmailJS on component mount
+if (typeof window !== 'undefined') {
+  emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER || "")
+}
+
 function SuccessMessage({ onComplete }: { onComplete: () => void }) {
   const [phase, setPhase] = useState<"entering" | "visible" | "fragmenting" | "done">("entering")
   const [fragments, setFragments] = useState<{ id: number; x: number; y: number; rotation: number; delay: number }[]>(
@@ -50,7 +55,7 @@ function SuccessMessage({ onComplete }: { onComplete: () => void }) {
     <div className="absolute inset-0 flex items-center justify-center overflow-hidden z-20 bg-background/80 backdrop-blur-sm rounded-2xl">
       <div
         className={cn(
-          "relative bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 shadow-2xl",
+          "relative bg-linear-to-r from-primary to-primary-dark rounded-2xl p-8 shadow-2xl",
           "transition-all duration-700 ease-out",
           phase === "entering" && "opacity-0 -translate-x-full scale-95",
           phase === "visible" && "opacity-100 translate-x-0 scale-100",
@@ -152,30 +157,26 @@ export function ContactSection() {
     try {
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_USER
 
-      if (!serviceId || !templateId || !publicKey) {
-        throw new Error("Configuração de email incompleta")
+      if (!serviceId || !templateId) {
+        throw new Error("Configuração de email incompleta. Verifique as variáveis de ambiente NEXT_PUBLIC_EMAILJS_SERVICE_ID e NEXT_PUBLIC_EMAILJS_TEMPLATE_ID")
       }
 
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company || "Não informado",
-          message: formData.message,
-        },
-        publicKey,
-      )
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        company: formData.company || "Não informado",
+        message: formData.message,
+        to_email: "contato@iseecodes.com.br", // Substitua pelo seu email
+      })
 
       setShowSuccess(true)
       setFormData({ fullName: "", email: "", phone: "", company: "", message: "" })
     } catch (error) {
       console.error("Erro ao enviar email:", error)
-      alert("Erro ao enviar mensagem. Tente novamente.")
+      alert("Erro ao enviar mensagem. Tente novamente. Verifique o console para mais detalhes.")
     } finally {
       setIsSubmitting(false)
     }
