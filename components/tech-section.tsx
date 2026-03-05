@@ -177,7 +177,7 @@ export function TechSection() {
             Arquitetura pensada para operar com segurança, estabilidade e evolução contínua.
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Projetamos e desenvolvemos sistemas sob medida com foco em boas práticas de engenharia,
+            Projetamos e desenvolvemos sistemas sob medida com base em boas práticas de engenharia,
             da arquitetura à operação e monitoramento.
           </p>
         </div>
@@ -192,7 +192,7 @@ export function TechSection() {
           </div>
 
           <div className="flex-1 max-w-xl">
-            <h3 className="text-2xl font-bold text-white mb-8">O que você pode esperar de nossa arquitetura.</h3>
+            <h3 className="text-2xl font-bold text-white mb-8">O que você pode esperar da nossa arquitetura.</h3>
             <ul className="space-y-5">
               {benefits.map((benefit, index) => (
                 <BenefitItem key={benefit.title} benefit={benefit} index={index} inView={inView} />
