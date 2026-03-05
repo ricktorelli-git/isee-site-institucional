@@ -168,7 +168,7 @@ export function HeroSection() {
                 opacity: 0,
               }}
           >
-            Fuja das soluções genéricas. Na{" "}
+            Fuja das soluções genéricas e abrace o poder do software sob demanda. Na{" "}
             <span className={cn("font-semibold", isScrolled ? "text-white" : "text-white")}>
               <span className={cn("transition-all duration-500", "text-accent")}>
                 Isee
