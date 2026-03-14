@@ -54,7 +54,7 @@ export function Footer() {
   const handleContactLeave = useCallback(() => setHoveredContact(null), [])
 
   return (
-    <footer className="bg-secondary py-16" role="contentinfo">
+    <footer className="bg-secondary py-12 md:py-14 lg:py-16" role="contentinfo">
       <style jsx>{`
         @keyframes wiggle {
           0%, 100% { transform: rotate(0deg); }
@@ -92,16 +92,26 @@ export function Footer() {
       `}</style>
 
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-4 md:mb-5">
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center mb-6" aria-label="Iseecodes - Voltar ao início">
               <span className="text-2xl font-bold text-white">
                 <span className="text-accent">Isee</span>codes
               </span>
             </a>
+
+            <div className="mb-5 space-y-1 text-sm">
+              <p className="text-white/70">
+                <span className="font-semibold text-white/90">Razão Social:</span> Iseecodes Desenvolvimento Web Ltda.
+              </p>
+              <p className="text-white/60">
+                <span className="font-semibold text-white/80">CNPJ:</span> 34.577.059/0001-69
+              </p>
+            </div>
+            
             <p className="text-white/60 max-w-md leading-relaxed mb-6">
-              Iseecodes Desenvolvimento Web Ltda. Software house brasileira especializada em soluções web e mobile sob
-              demanda.
+              Iseecodes Desenvolvimento Web Ltda. Software house especializada em soluções web e mobile sob
+              demanda, com foco em gestão empresarial.
             </p>
             {/*<div className="flex gap-4" role="list" aria-label="Redes sociais">*/}
             {/*  <a*/}
@@ -139,7 +149,7 @@ export function Footer() {
 
           <nav aria-label="Navegação do rodapé">
             <h4 className="font-semibold text-white mb-6">Navegação</h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-6 sm:gap-x-8">
               {navLinks.map((link) => (
                 <li key={link.href} className="relative">
                   <a
@@ -240,7 +250,7 @@ export function Footer() {
           </address>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
           <p className="text-white/40 text-sm">
             © {new Date().getFullYear()} Iseecodes Desenvolvimento Web Ltda. Todos os direitos reservados.
           </p>
