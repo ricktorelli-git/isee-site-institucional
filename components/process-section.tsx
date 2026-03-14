@@ -11,8 +11,6 @@ const processSteps = [
     number: "01",
     title: "Requisitos",
     description: "Entendemos suas necessidades e objetivos do projeto",
-    description2: "Dedicar um tempo maior nesta fase é fundamental para um projeto alinhado, eficiente e sem surpresas.",
-
     details: [
       "Imersão no contexto do projeto",
       "Levantamento de requisitos e fluxos operacionais",
@@ -26,7 +24,6 @@ const processSteps = [
     number: "02",
     title: "Planejamento",
     description: "Criamos um roteiro claro para execução",
-    description2: "Um planejamento detalhado é a base para um desenvolvimento organizado, com prazos realistas e entregas previsíveis.",
     details: [
       "Estruturação do escopo inicial",
       "Definição de funcionalidades e prioridades",
@@ -40,7 +37,6 @@ const processSteps = [
     number: "03",
     title: "Aprovação",
     description: "Validamos cada etapa antes de avançar",
-    description2: "Essa etapa é crucial para garantir que estamos alinhados com suas expectativas, minimizando retrabalhos na busca da satisfação final.",
     details: [
       "Apresentação de fluxos e protótipos visuais",
       "Revisão conjunta de funcionalidades previstas",
@@ -54,7 +50,6 @@ const processSteps = [
     number: "04",
     title: "Desenvolvimento",
     description: "Desenvolvimento em ciclos de entrega",
-    description2: "Nosso desenvolvimento é organizado em ciclos de entrega, garantindo ritmo, alinhamento e previsibilidade em cada etapa do projeto.",
     details: [
       "Entregas parciais ao longo do desenvolvimento",
       "Acompanhamento contínuo do projeto",
@@ -68,8 +63,6 @@ const processSteps = [
     number: "05",
     title: "Implantação",
     description: "Preparação para lançamento e suporte inicial",
-    description2: "Nosso processo de implantação é cuidadosamente planejado para garantir uma transição suave para o ambiente de produção, com suporte dedicado para resolver qualquer questão que possa surgir.",
-
     details: [
       "Publicação em ambiente de produção",
       "Configurações finais e estabilização",
@@ -175,8 +168,6 @@ export function ProcessSection() {
                       </div>
 
                       <p className="text-white/70 mb-6">{step.description}</p>
-                      <p className="text-white/70 mb-3 text-sm">{step.description2}</p>
-
                       {/* Lista de 4 detalhamentos */}
                       <ul className="space-y-3">
                         {step.details.map((detail, detailIndex) => (
