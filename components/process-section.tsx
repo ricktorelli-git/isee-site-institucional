@@ -9,26 +9,29 @@ const processSteps = [
   {
     icon: FileSearch,
     number: "01",
-    title: "Definição",
-    description: "Entendemos suas necessidades e objetivos de negócio",
+    title: "Requisitos",
+    description: "Entendemos suas necessidades e objetivos do projeto",
+    description2: "Dedicar um tempo maior nesta fase é fundamental para um projeto alinhado, eficiente e sem surpresas.",
+
     details: [
-      "Reuniões de levantamento de requisitos",
-      "Análise de processos atuais",
-      "Identificação de dores e oportunidades",
-      "Definição de objetivos mensuráveis",
+      "Imersão no contexto do projeto",
+      "Levantamento de requisitos e fluxos operacionais",
+      "Mapeamento de necessidades e prioridades",
+      "Definição dos objetivos concretos da solução",
     ],
     color: "bg-primary",
   },
   {
     icon: ClipboardList,
     number: "02",
-    title: "Escopo",
-    description: "Documentamos funcionalidades, prazos e entregas",
+    title: "Planejamento",
+    description: "Criamos um roteiro claro para execução",
+    description2: "Um planejamento detalhado é a base para um desenvolvimento organizado, com prazos realistas e entregas previsíveis.",
     details: [
-      "Documento de especificação técnica",
-      "Cronograma detalhado de entregas",
-      "Definição de marcos e etapas",
-      "Orçamento transparente e fixo",
+      "Estruturação do escopo inicial",
+      "Definição de funcionalidades e prioridades",
+      "Organização das etapas de entrega",
+      "Planejamento técnico do projeto e orçamento transparente",
     ],
     color: "bg-accent",
   },
@@ -37,11 +40,12 @@ const processSteps = [
     number: "03",
     title: "Aprovação",
     description: "Validamos cada etapa antes de avançar",
+    description2: "Essa etapa é crucial para garantir que estamos alinhados com suas expectativas, minimizando retrabalhos na busca da satisfação final.",
     details: [
-      "Apresentação de protótipos visuais",
-      "Revisão conjunta de funcionalidades",
-      "Assinatura de termo de aceite",
+      "Apresentação de fluxos e protótipos visuais",
+      "Revisão conjunta de funcionalidades previstas",
       "Alinhamento de expectativas finais",
+      "Aprovação formal do planejamento e orçamento",
     ],
     color: "bg-primary",
   },
@@ -49,24 +53,27 @@ const processSteps = [
     icon: Code2,
     number: "04",
     title: "Desenvolvimento",
-    description: "Codificamos com as melhores práticas",
+    description: "Desenvolvimento em ciclos de entrega",
+    description2: "Nosso desenvolvimento é organizado em ciclos de entrega, garantindo ritmo, alinhamento e previsibilidade em cada etapa do projeto.",
     details: [
-      "Sprints quinzenais com entregas parciais",
-      "Reuniões de acompanhamento",
-      "Ambiente de homologação disponível",
-      "Testes automatizados contínuos",
+      "Entregas parciais ao longo do desenvolvimento",
+      "Acompanhamento contínuo do projeto",
+      "Ambiente de testes disponível para validação",
+      "Aprovações regulares para garantir alinhamento",
     ],
     color: "bg-accent",
   },
   {
     icon: Rocket,
     number: "05",
-    title: "Entrega",
-    description: "Implantação e suporte garantido",
+    title: "Implantação",
+    description: "Preparação para lançamento e suporte inicial",
+    description2: "Nosso processo de implantação é cuidadosamente planejado para garantir uma transição suave para o ambiente de produção, com suporte dedicado para resolver qualquer questão que possa surgir.",
+
     details: [
-      "Implantação em ambiente de produção",
-      "Treinamento da equipe usuária",
-      "Documentação técnica completa",
+      "Publicação em ambiente de produção",
+      "Configurações finais e estabilização",
+      "Treinamento de uso",
       "Suporte e manutenção continuada",
     ],
     color: "bg-primary",
@@ -108,11 +115,10 @@ export function ProcessSection() {
             Nossa Metodologia
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
-            Um processo claro e transparente
+            Como tiramos seu projeto do papel
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Trabalhamos com etapas bem definidas para garantir que seu projeto seja entregue com qualidade e dentro do
-            prazo.
+            Um fluxo de trabalho pensado para dar ritmo, alinhamento e previsibilidade à execução.
           </p>
         </div>
 
@@ -169,6 +175,7 @@ export function ProcessSection() {
                       </div>
 
                       <p className="text-white/70 mb-6">{step.description}</p>
+                      <p className="text-white/70 mb-3 text-sm">{step.description2}</p>
 
                       {/* Lista de 4 detalhamentos */}
                       <ul className="space-y-3">
