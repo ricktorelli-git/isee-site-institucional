@@ -159,7 +159,7 @@ export function TechSection() {
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-6xl mx-auto text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
             Segurança e Confiabilidade
           </span>

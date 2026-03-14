@@ -103,7 +103,7 @@ export function ProcessSection() {
   return (
     <section id="processo" className="py-24 bg-secondary overflow-hidden" ref={ref}>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-5xl mx-auto text-center mb-20">
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
             Nossa Metodologia
           </span>
