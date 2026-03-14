@@ -4,54 +4,38 @@ import { useInView } from "react-intersection-observer"
 import {
 	GitGraph,
 	ArrowRightLeft,
-	Target,
-	DollarSign,
-	Banknote,
 	Lock,
-	ArrowRight
+	Target,
+	ArrowRight,
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
 const services = [
 	{
 		icon: GitGraph,
-		title: "Controle de processos",
+		title: "Processos e operação",
 		description:
-			"Transforme fluxos manuais em processos automatizados e inteligentes. Aumente produtividade, reduza erros operacionais e ganhe visibilidade total em tempo real.",
+			"Estruturamos fluxos, rotinas e etapas operacionais para reduzir falhas, aumentar produtividade e dar mais controle à execução.",
 	},
 	{
 		icon: ArrowRightLeft,
-		title: "Integração de dados",
+		title: "Integração e informação",
 		description:
-			"Conecte todos os seus sistemas em uma única fonte de verdade. Sincronize informações em tempo real, elimine redundâncias e acelere decisões estratégicas.",
+			"Conectamos sistemas e informações para reduzir redundâncias, melhorar a consistência dos dados e apoiar decisões com mais segurança.",
 	},
 	{
 		icon: Lock,
-		title: "Controle de acesso e rastreabilidade",
+		title: "Controle e governança",
 		description:
-			"Proteja dados sensíveis com permissões granulares e alçadas inteligentes. Mantenha conformidade regulatória e auditoria completa de todas as operações.",
+			"Desenvolvemos mecanismos de controle, permissões, aprovações e rastreabilidade para reforçar governança, segurança e conformidade.",
 	},
-
-	{
-		icon: DollarSign,
-		title: "Orçamento e gestão de custos",
-		description:
-			"Planeje com precisão e controle cada centavo do seu orçamento. Identifique oportunidades de economia, otimize alocação de recursos e maximize rentabilidade.",
-	},
-	{
-		icon: Banknote,
-		title: "Controle financeiro e estoque",
-		description:
-			"Gerencie fluxo de caixa, estoque e capital de giro integrados. Automatize pagamentos, recebimentos, controle de inventário e obtenha visibilidade completa do caixa.",
-	},
-
 	{
 		icon: Target,
-		title: "Dashboards",
+		title: "Indicadores e decisão",
 		description:
-			"Converta dados brutos em insights estratégicos e visuais impactantes. Acompanhe performance em tempo real e tome decisões baseadas em inteligência.",
+			"Transformamos dados da operação em acompanhamento gerencial para facilitar análise, priorização e tomada de decisão.",
 	},
 ]
 
@@ -70,37 +54,35 @@ export function ServicesSection() {
 		>
 			<div className="container mx-auto px-4 lg:px-8">
 				<div className="max-w-3xl mx-auto text-center mb-16">
-					<span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-						Nossos Serviços
-					</span>
+          <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
+            O que podemos desenvolver
+          </span>
+
 					<h2
 						id="servicos-titulo"
 						className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
 					>
-						Software sob medida para gestão, automação e integração de processos.
+						Soluções sob medida para estruturar, controlar e evoluir a gestão da sua empresa.
 					</h2>
+
 					<p className="text-muted-foreground text-lg leading-relaxed">
-						Desenvolvemos softwares web e mobile com foco em gestão empresarial,
-						automação de processos e soluções personalizadas para atender às
-						necessidades do seu negócio.
+						Desenvolvemos sistemas voltados à gestão empresarial para organizar processos,
+						integrar informações, fortalecer o controle e apoiar decisões.
 					</p>
 				</div>
 
-				<div
-					className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-					role="list"
-				>
+				<div className="grid md:grid-cols-2 gap-6" role="list">
 					{services.map((service, index) => (
 						<Card
 							key={service.title}
 							role="listitem"
 							className={cn(
-								"group border border-border/50 bg-background hover:border-2 hover:border-accent transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1",
-								inView &&
-									"animate-in fade-in slide-in-from-bottom-4",
+								"group border border-border/50 bg-background transition-all duration-500",
+								"hover:border-accent hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1",
+								inView && "animate-in fade-in slide-in-from-bottom-4",
 							)}
 							style={{
-								animationDelay: `${index * 100}ms`,
+								animationDelay: `${index * 120}ms`,
 								animationFillMode: "both",
 							}}
 						>
@@ -111,9 +93,11 @@ export function ServicesSection() {
 								>
 									<service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
 								</div>
+
 								<h3 className="text-xl font-semibold text-foreground mb-3">
 									{service.title}
 								</h3>
+
 								<p className="text-muted-foreground leading-relaxed">
 									{service.description}
 								</p>
@@ -130,32 +114,32 @@ export function ServicesSection() {
 				>
 					<div className="inline-block bg-accent/20 rounded-xl px-8 py-6 border-2 border-accent/30 max-w-2xl">
 						<p className="text-foreground font-semibold text-lg mb-2">
-							Estes são alguns exemplos de soluções que podemos desenvolver para
-							sua realidade.
+							Cada solução parte da realidade da sua empresa.
 						</p>
+
 						<p className="text-muted-foreground">
-							Temos expertise para desenhar e desenvolver sistemas sob medida que
-							resolvem seus desafios específicos de gestão, automação e integração.
+							Mais do que oferecer funcionalidades isoladas, buscamos estruturar sistemas que façam sentido para os seus processos, sua operação e sua gestão.
 						</p>
-						<p className="text-muted-foreground">
-							<span className="font-semibold text-foreground"> Entre em contato
-								e descreva sua demanda. Vamos propor o caminho mais seguro
-								e eficiente.
-							</span>
+
+						<p className="text-muted-foreground mt-2">
+              <span className="font-semibold text-foreground">
+                Entre em contato e descreva sua demanda. Vamos propor um caminho claro, viável e sob medida.
+              </span>
 						</p>
+
 						<a href="#contato" className="mt-6 inline-block">
 							<Button
 								size="lg"
 								className="relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg group"
-								aria-label="Solicitar orçamento para evoluir sua gestão"
+								aria-label="Entrar em contato para falar sobre sua demanda"
 							>
-               				 <span className="relative z-10 flex items-center">
-                  				Entrar em Contato
-                  				<ArrowRight
-					  				className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
-					  				aria-hidden="true"
-				  				/>
-							</span>
+                <span className="relative z-10 flex items-center">
+                  Entrar em Contato
+                  <ArrowRight
+					  className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
+					  aria-hidden="true"
+				  />
+                </span>
 								<span
 									className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite]"
 									aria-hidden="true"
