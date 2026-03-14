@@ -140,9 +140,8 @@ export function HeroSection() {
               />
             </span>
           </h1>
-
-          <p
-              className="text-sm sm:text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed px-2 md:px-0"
+          <h2
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/85 max-w-4xl mx-auto mb-8 md:mb-12 leading-relaxed px-4 sm:px-6 md:px-0 text-balance"
               style={{
                 animation: isLoaded ? "fadeSlideUp 0.8s ease-out 0.4s forwards" : "none",
                 opacity: 0,
@@ -150,13 +149,13 @@ export function HeroSection() {
           >
             Fuja das soluções genéricas. Na{" "}
             <span className={cn("font-semibold", isScrolled ? "text-white" : "text-white")}>
-              <span className={cn("transition-all duration-500", "text-accent")}>
-                Isee
-              </span>
-              codes
-            </span>, a gestão vem antes da tecnologia. Desenvolvemos sistemas sob medida que
-            automatizam processos, integram dados e resolvem desafios reais de gestão.</p>
-
+    <span className={cn("transition-all duration-500", "text-accent")}>
+      Isee
+    </span>
+    codes
+  </span>, a gestão vem antes da tecnologia. Desenvolvemos sistemas sob medida que
+            automatizam processos, integram dados e resolvem desafios reais de gestão.
+          </h2>
           <div
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 md:mb-12"
             style={{
