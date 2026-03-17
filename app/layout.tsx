@@ -10,18 +10,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://iseecodes.com.br"),
   title: {
-    default: "Iseecodes - Desenvolvimento Web e Mobile | Software House Brasileira",
+    default: "Iseecodes - Desenvolvimento Web e Mobile | Software House",
     template: "%s | Iseecodes",
   },
   description:
-    "Software house brasileira especializada em desenvolvimento web, mobile e sistemas de gestao financeira sob demanda. Solucoes personalizadas para empresas.",
+      "Software house especializada em desenvolvimento web, mobile e sistemas de gestao sob demanda.",
   keywords: [
     "desenvolvimento web",
     "desenvolvimento mobile",
+    "desenvolvimento de software",
     "software sob demanda",
     "software house",
     "sistemas de gestao",
     "gestao financeira",
+    "gestão de custos",
     "aplicativos mobile"
   ],
   authors: [{ name: "Iseecodes Desenvolvimento Web Ltda" }],
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Iseecodes",
     title: "Iseecodes - Desenvolvimento Web e Mobile",
     description:
-      "Software house brasileira especializada em desenvolvimento web, mobile e sistemas de gestao financeira sob demanda.",
+        "Software house especializada em desenvolvimento web, mobile para sistemas de gestao sob demanda.",
     images: [
       {
         url: "/og-image.jpg",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Iseecodes - Desenvolvimento Web e Mobile",
     description:
-      "Software house brasileira especializada em desenvolvimento web, mobile e sistemas de gestao sob demanda.",
+      "Software house especializada em desenvolvimento web, mobile para sistemas de gestao sob demanda.",
     images: ["/og-image.jpg"],
   },
   robots: {
