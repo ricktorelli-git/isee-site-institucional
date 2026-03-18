@@ -169,7 +169,7 @@ export function TechSection() {
             </h2>
 
             <p className="text-white/70 text-lg leading-relaxed">
-              Desenvolvemos soluções sob medida com uma base técnica preparada para proteger a operação,
+              Desenvolvemos com uma base técnica preparada para proteger a operação,
               sustentar o uso no dia a dia e acompanhar a evolução do negócio.
             </p>
           </div>

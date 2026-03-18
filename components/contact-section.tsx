@@ -292,7 +292,7 @@ export function ContactSection() {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Conte-nos sobre seu projeto, suas necessidades e como podemos ajudar..."
+                    placeholder="Descreva de forma objetiva o que necessita, para evoluirmos depois o tema..."
                     rows={5}
                     required
                     className="bg-background resize-none"

@@ -18,7 +18,7 @@ export function Header() {
     { href: "#servicos", label: "Serviços", id: "servicos" },
     { href: "#processo", label: "Processo", id: "processo" },
     { href: "#sobre", label: "Sobre", id: "sobre" },
-    { href: "#tecnologias", label: "Tecnologias", id: "tecnologias" },
+    { href: "#tecnologias", label: "Segurança", id: "tecnologias" },
     { href: "#contato", label: "Contato", id: "contato" },
   ]
 

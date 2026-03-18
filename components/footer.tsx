@@ -9,12 +9,12 @@ const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#processo", label: "Processo" },
   { href: "#sobre", label: "Sobre" },
-  { href: "#tecnologias", label: "Tecnologias" },
+  { href: "#tecnologias", label: "Segurança" },
   { href: "#contato", label: "Contato" },
 ]
 
 const whatsappNumber = "5551999698812"
-const whatsappMessage = "Olá, vim pelo site [ISEECODES] e gostaria de falar sobre um projeto."
+const whatsappMessage = "Olá, vim pelo site ISEECODES e gostaria de falar sobre um projeto."
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
 const contactItems = [
