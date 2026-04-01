@@ -124,11 +124,11 @@ export function ServicesSection() {
                         </p>
 
                         <p className="text-2xl md:text-3xl font-bold text-foreground leading-tight max-w-3xl mx-auto">
-                            Esses são apenas alguns exemplos do que podemos desenvolver para a sua empresa.
+                            Esses são alguns exemplos do que podemos desenvolver para a sua empresa.
                         </p>
 
                         <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-5">
-                            Criamos diferentes soluções para gestão empresarial, sempre alinhadas aos seus processos, à sua operação e às necessidades reais do seu negócio.
+                            Criamos diferentes soluções para gestão empresarial, desde <span className="font-semibold text-primary">Sites Institucionais</span> até soluções complexas, sempre alinhadas às necessidades reais do seu negócio.
                         </p>
 
                         <p className="text-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-4">
