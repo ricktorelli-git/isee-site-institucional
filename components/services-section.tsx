@@ -56,23 +56,21 @@ export function ServicesSection() {
                 <div className="max-w-6xl mx-auto text-center mb-16">
           <span
               className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-            O que podemos desenvolver
+            Nossos serviços
           </span>
 
                     <h2
                         id="servicos-titulo"
                         className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
                     >
-                        Soluções sob medida para fortalecer a gestão da sua empresa com clareza e
-                        eficiência.
+                        Soluções sob medida que proporcionam mais visibilidade institucional, controle e fluidez para a sua operação.
                     </h2>
 
 
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        Com acesso pela web e hospedagem em nuvem alinhada à realidade da sua
-                        empresa,
-                        desenvolvemos sistemas para dar mais praticidade à operação, mais fluidez
-                        para a equipe e mais controle para a gestão.
+                        Desenvolvemos desde Sites Institucionais,  até soluções complexas de gestão, via web e mobile,
+                        com hospedagem em nuvem, tendo por base em 4 pilares.
+
                     </p>
                 </div>
 
