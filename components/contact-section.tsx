@@ -4,139 +4,63 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useInView } from "react-intersection-observer"
-import { Send, CheckCircle2, Loader2, MessageSquare } from "lucide-react"
+import { Send, CheckCircle2, Loader2, MessageSquare, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import emailjs from "@emailjs/browser"
 
-// Initialize EmailJS on component mount
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER || "")
 }
 
 function SuccessMessage({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState<"entering" | "visible" | "fragmenting" | "done">("entering")
-  const [fragments, setFragments] = useState<{ id: number; x: number; y: number; rotation: number; delay: number }[]>(
-    [],
-  )
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const enterTimer = setTimeout(() => setPhase("visible"), 50)
-
-    const visibleTimer = setTimeout(() => {
-      const newFragments = Array.from({ length: 20 }, (_, i) => ({
-        id: i,
-        x: (Math.random() - 0.5) * 300,
-        y: (Math.random() - 0.5) * 200,
-        rotation: (Math.random() - 0.5) * 180,
-        delay: Math.random() * 0.3,
-      }))
-      setFragments(newFragments)
-      setPhase("fragmenting")
-    }, 3000)
-
-    const doneTimer = setTimeout(() => {
-      setPhase("done")
-      onComplete()
-    }, 4000)
+    const enterTimer = setTimeout(() => setVisible(true), 40)
+    const doneTimer = setTimeout(() => onComplete(), 2600)
 
     return () => {
       clearTimeout(enterTimer)
-      clearTimeout(visibleTimer)
       clearTimeout(doneTimer)
     }
   }, [onComplete])
 
-  if (phase === "done") return null
-
   return (
-    <div className="absolute inset-0 flex items-center justify-center overflow-hidden z-20 bg-background/80 backdrop-blur-sm rounded-2xl">
-      <div
-        className={cn(
-          "relative bg-linear-to-r from-primary to-primary-dark rounded-2xl p-8 shadow-2xl",
-          "transition-all duration-700 ease-out",
-          phase === "entering" && "opacity-0 -translate-x-full scale-95",
-          phase === "visible" && "opacity-100 translate-x-0 scale-100",
-          phase === "fragmenting" && "opacity-0 scale-110",
-        )}
-      >
-        {phase === "fragmenting" &&
-          fragments.map((fragment) => (
-            <div
-              key={fragment.id}
-              className="absolute w-4 h-4 rounded-sm bg-primary/80"
-              style={{
-                left: "50%",
-                top: "50%",
-                animation: `fragment 0.8s ease-out ${fragment.delay}s forwards`,
-                ["--fragment-x" as string]: `${fragment.x}px`,
-                ["--fragment-y" as string]: `${fragment.y}px`,
-                ["--fragment-rotation" as string]: `${fragment.rotation}deg`,
-              }}
-            />
-          ))}
-
-        <div className="flex flex-col items-center text-center relative z-10">
-          <div
-            className={cn(
-              "w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4",
-              "transition-all duration-500 delay-200",
-              phase === "visible" && "animate-bounce",
-            )}
-          >
-            <CheckCircle2 className="w-8 h-8 text-white" />
-          </div>
-          <h3 className="text-xl font-semibold text-white mb-2">Mensagem enviada!</h3>
-          <p className="text-white/80">Entraremos em contato em breve.</p>
-        </div>
-
+      <div className="absolute inset-0 z-20 flex items-center justify-center rounded-2xl bg-background/80 backdrop-blur-sm">
         <div
-          className={cn("absolute inset-0 rounded-2xl opacity-0", phase === "visible" && "animate-pulse opacity-30")}
-          style={{
-            background: "linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent)",
-          }}
-        />
+            className={cn(
+                "rounded-2xl bg-linear-to-r from-primary to-primary-dark p-8 text-center shadow-2xl transition-all duration-500",
+                visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
+            )}
+        >
+          <div className="mb-4 flex justify-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/15">
+              <CheckCircle2 className="h-8 w-8 text-white" />
+            </div>
+          </div>
+          <h3 className="mb-2 text-xl font-semibold text-white">Mensagem enviada</h3>
+          <p className="text-white/85">Entraremos em contato em breve.</p>
+        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fragment {
-          0% {
-            transform: translate(-50%, -50%) rotate(0deg) scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: translate(
-              calc(-50% + var(--fragment-x)),
-              calc(-50% + var(--fragment-y))
-            ) rotate(var(--fragment-rotation)) scale(0);
-            opacity: 0;
-          }
-        }
-      `}</style>
-    </div>
   )
 }
 
 function formatPhone(value: string): string {
   const numbers = value.replace(/\D/g, "")
 
-  if (numbers.length <= 2) {
-    return numbers.length ? `(${numbers}` : ""
-  }
-  if (numbers.length <= 7) {
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`
-  }
-  if (numbers.length <= 11) {
-    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`
-  }
+  if (numbers.length <= 2) return numbers.length ? `(${numbers}` : ""
+  if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`
+  if (numbers.length <= 11) return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`
   return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`
 }
 
 export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -145,38 +69,35 @@ export function ContactSection() {
     message: "",
   })
 
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  })
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitError("")
 
     try {
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 
       if (!serviceId || !templateId) {
-        throw new Error("Configuração de email incompleta. Verifique as variáveis de ambiente NEXT_PUBLIC_EMAILJS_SERVICE_ID e NEXT_PUBLIC_EMAILJS_TEMPLATE_ID")
+        throw new Error("Configuração de email incompleta.")
       }
 
-      // Send email using EmailJS
       await emailjs.send(serviceId, templateId, {
         name: formData.fullName,
         email: formData.email,
         phone: formData.phone,
         company: formData.company || "Não informado",
         message: formData.message,
-        to_email: "contato@iseecodes.com.br", // Substitua pelo seu email
+        to_email: "contato@iseecodes.com.br",
       })
 
       setShowSuccess(true)
       setFormData({ fullName: "", email: "", phone: "", company: "", message: "" })
     } catch (error) {
       console.error("Erro ao enviar email:", error)
-      alert("Erro ao enviar mensagem. Tente novamente. Verifique o console para mais detalhes.")
+      setSubmitError("Não foi possível enviar sua mensagem agora. Tente novamente em instantes ou fale conosco pelo WhatsApp.")
     } finally {
       setIsSubmitting(false)
     }
@@ -187,145 +108,150 @@ export function ContactSection() {
 
     if (name === "phone") {
       setFormData((prev) => ({ ...prev, [name]: formatPhone(value) }))
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }))
+      return
     }
+
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
   return (
-    <section id="contato" className="py-24 bg-background" ref={ref}>
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <div className={cn("text-center mb-12", inView && "animate-in fade-in slide-in-from-bottom-6 duration-700")}>
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-              Fale Conosco
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Vamos conversar sobre seu projeto?</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-              Conte brevemente sua necessidade e entraremos em contato para entender seu projeto e
-              avaliar como um sistema sob medida pode ajudar sua empresa.
-            </p>
-            <p className="text-primary/90 text-sm md:text-base mt-6 px-4 md:px-0 max-w-2xl mx-auto font-semibold">
-              Respondemos normalmente em até 1 dia útil.
-            </p>
-          </div>
+      <section id="contato" className="bg-background py-24" ref={ref}>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <div className={cn("mb-12 text-center", inView && "animate-in fade-in slide-in-from-bottom-6 duration-700")}>
+              <span className="mb-4 inline-block text-primary font-semibold text-sm uppercase tracking-wider">Fale conosco</span>
+              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Vamos conversar sobre sua demanda?</h2>
+              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Conte brevemente sua necessidade e entraremos em contato para entender o contexto, alinhar expectativas
+                e avaliar como estruturar a solução mais adequada.
+              </p>
+              <p className="mx-auto mt-6 max-w-2xl px-4 text-sm font-semibold text-primary/90 md:px-0 md:text-base">
+                Respondemos normalmente em até 1 dia útil.
+              </p>
+            </div>
 
-          {/* Formulário reformulado */}
-          <div className={cn(inView && "animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200")}>
-            <div className="bg-muted/30 rounded-2xl p-8 md:p-10 border border-border relative">
-              {showSuccess && <SuccessMessage onComplete={() => setShowSuccess(false)} />}
+            <div className={cn(inView && "animate-in fade-in slide-in-from-bottom-10 duration-700 delay-150")}>
+              <div className="relative rounded-2xl border border-border bg-muted/30 p-8 md:p-10">
+                {showSuccess && <SuccessMessage onComplete={() => setShowSuccess(false)} />}
 
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Envie sua mensagem</h3>
-                  <p className="text-sm text-muted-foreground">Todos os campos com * são obrigatórios</p>
-                </div>
-              </div>
-
-              <form onSubmit={handleSubmit} className={cn("space-y-6", showSuccess && "opacity-0")}>
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="mb-8 flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                    <MessageSquare className="h-6 w-6 text-primary" />
+                  </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Nome Completo <span className="text-accent">*</span>
+                    <h3 className="font-semibold text-foreground">Envie sua mensagem</h3>
+                    <p className="text-sm text-muted-foreground">Todos os campos com * são obrigatórios</p>
+                  </div>
+                </div>
+
+                <form onSubmit={handleSubmit} className={cn("space-y-6", showSuccess && "opacity-0")}>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground">
+                        Nome completo <span className="text-accent">*</span>
+                      </label>
+                      <Input
+                          name="fullName"
+                          value={formData.fullName}
+                          onChange={handleInputChange}
+                          placeholder="Digite seu nome completo"
+                          required
+                          className="bg-background"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground">
+                        Email <span className="text-accent">*</span>
+                      </label>
+                      <Input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="seu@email.com"
+                          required
+                          className="bg-background"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground">
+                        Telefone <span className="text-accent">*</span>
+                      </label>
+                      <Input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="(00) 00000-0000"
+                          required
+                          maxLength={15}
+                          className="bg-background"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-foreground">Empresa</label>
+                      <Input
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          placeholder="Nome da sua empresa"
+                          className="bg-background"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-foreground">
+                      Mensagem <span className="text-accent">*</span>
                     </label>
-                    <Input
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      placeholder="Digite seu nome completo"
-                      required
-                      className="bg-background"
+                    <Textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        placeholder="Descreva sua demanda, o contexto e o principal objetivo que você deseja resolver."
+                        rows={5}
+                        required
+                        className="resize-none bg-background"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Email <span className="text-accent">*</span>
-                    </label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="seu@email.com"
-                      required
-                      className="bg-background"
-                    />
-                  </div>
-                </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Telefone <span className="text-accent">*</span>
-                    </label>
-                    <Input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(00) 00000-0000"
-                      required
-                      maxLength={15}
-                      className="bg-background"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Empresa</label>
-                    <Input
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      placeholder="Nome da sua empresa"
-                      className="bg-background"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Mensagem <span className="text-accent">*</span>
-                  </label>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Descreva de forma objetiva o que necessita, para evoluirmos depois o tema..."
-                    rows={5}
-                    required
-                    className="bg-background resize-none"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting}
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-base"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                      Enviando...
-                    </>
-                  ) : (
-                    <>
-                      Enviar Mensagem
-                      <Send className="ml-2 w-5 h-5" />
-                    </>
+                  {submitError && (
+                      <div className="flex items-start gap-3 rounded-lg border border-destructive/20 bg-destructive/5 p-4 text-sm text-foreground">
+                        <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-destructive" />
+                        <span>{submitError}</span>
+                      </div>
                   )}
-                </Button>
 
-                <p className="text-xs text-muted-foreground text-center">
-                  Ao enviar, você concorda com nossa política de privacidade. Seus dados estão seguros conosco.
-                </p>
-              </form>
+                  <Button
+                      type="submit"
+                      size="lg"
+                      disabled={isSubmitting}
+                      className="w-full bg-accent py-6 text-base font-semibold text-accent-foreground hover:bg-accent/90"
+                  >
+                    {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                          Enviando...
+                        </>
+                    ) : (
+                        <>
+                          Enviar mensagem
+                          <Send className="ml-2 h-5 w-5" />
+                        </>
+                    )}
+                  </Button>
+
+                  <p className="text-center text-xs text-muted-foreground">
+                    Ao enviar, você concorda com nossa política de privacidade. Seus dados estão seguros conosco.
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   )
 }

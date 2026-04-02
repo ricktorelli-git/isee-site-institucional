@@ -72,78 +72,55 @@ const benefits = [
   },
 ]
 
-const PillarCard = memo(function PillarCard({
-                                              pillar,
-                                              index,
-                                              inView,
-                                            }: {
-  pillar: (typeof pillars)[0]
-  index: number
-  inView: boolean
-}) {
+const PillarCard = memo(function PillarCard({ pillar, index, inView }: { pillar: (typeof pillars)[0]; index: number; inView: boolean }) {
   const Icon = pillar.icon
 
   return (
       <div
           className={cn(
-              "group relative p-6 rounded-2xl transition-all duration-300 h-full flex flex-col",
-              "bg-[#005484]/40 border border-white/10",
-              "hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1",
+              "group relative flex h-full flex-col rounded-2xl border border-white/10 bg-[#005484]/35 p-6 transition-all duration-300",
+              "hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10",
               inView && "animate-in fade-in zoom-in-95",
           )}
-          style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
+          style={{ animationDelay: `${index * 90}ms`, animationFillMode: "both" }}
       >
         <div
-            className="relative w-16 h-16 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110"
+            className="relative mb-4 flex h-16 w-16 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105"
             style={{
-              background: `linear-gradient(135deg, ${pillar.color}25 0%, ${pillar.color}50 100%)`,
-              boxShadow: `0 4px 20px ${pillar.color}30`,
+              background: `linear-gradient(135deg, ${pillar.color}20 0%, ${pillar.color}45 100%)`,
+              boxShadow: `0 4px 16px ${pillar.color}22`,
             }}
         >
-          <Icon
-              className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
-              style={{ color: pillar.color === "#005484" ? "#0080C1" : pillar.color }}
-          />
+          <Icon className="h-8 w-8" style={{ color: pillar.color === "#005484" ? "#0080C1" : pillar.color }} />
         </div>
 
-        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors">
-          {pillar.name}
-        </h3>
-        <p className="text-sm text-white/70 leading-relaxed">{pillar.description}</p>
+        <h3 className="mb-2 text-lg font-bold text-white transition-colors group-hover:text-accent">{pillar.name}</h3>
+        <p className="text-sm leading-relaxed text-white/70">{pillar.description}</p>
       </div>
   )
 })
 
-const BenefitItem = memo(function BenefitItem({
-                                                benefit,
-                                                index,
-                                                inView,
-                                              }: {
-  benefit: (typeof benefits)[0]
-  index: number
-  inView: boolean
-}) {
+const BenefitItem = memo(function BenefitItem({ benefit, index, inView }: { benefit: (typeof benefits)[0]; index: number; inView: boolean }) {
   const Icon = benefit.icon
 
   return (
       <li
           className={cn(
-              "flex items-start gap-4 p-4 rounded-xl transition-all duration-300",
-              "hover:bg-white/10",
-              inView && "animate-in fade-in slide-in-from-right-8",
+              "flex items-start gap-4 rounded-xl p-4 transition-all duration-300 hover:bg-white/5",
+              inView && "animate-in fade-in slide-in-from-right-6",
           )}
-          style={{ animationDelay: `${index * 100 + 300}ms`, animationFillMode: "both" }}
+          style={{ animationDelay: `${index * 80 + 220}ms`, animationFillMode: "both" }}
       >
-        <div className="shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mt-0.5">
-          <Icon className="w-5 h-5 text-accent" />
+        <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/20">
+          <Icon className="h-5 w-5 text-accent" />
         </div>
 
         <div>
-          <h4 className="font-semibold text-white mb-1 flex items-center gap-2">
+          <h4 className="mb-1 flex items-center gap-2 font-semibold text-white">
             {benefit.title}
-            <CheckCircle2 className="w-4 h-4 text-accent" />
+            <CheckCircle2 className="h-4 w-4 text-accent" />
           </h4>
-          <p className="text-sm text-white/60 leading-relaxed">{benefit.description}</p>
+          <p className="text-sm leading-relaxed text-white/60">{benefit.description}</p>
         </div>
       </li>
   )
@@ -153,42 +130,40 @@ export function TechSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-      <section id="tecnologias" className="py-24 bg-secondary overflow-hidden relative" ref={ref}>
-        <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/5 pointer-events-none" />
-        <div className="absolute top-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+      <section id="tecnologias" className="relative overflow-hidden bg-secondary py-24" ref={ref} aria-labelledby="tecnologias-titulo">
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/5" />
+        <div className="pointer-events-none absolute top-0 left-0 h-96 w-96 rounded-full bg-accent/8 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 bottom-0 h-80 w-80 rounded-full bg-primary/12 blur-3xl" />
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto text-center mb-16">
-          <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-            Segurança e Confiabilidade
+        <div className="container relative z-10 mx-auto px-4 lg:px-8">
+          <div className="mx-auto mb-16 max-w-5xl text-center">
+          <span className="mb-4 inline-block text-accent font-semibold text-sm uppercase tracking-wider">
+            Segurança e confiabilidade
           </span>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
+            <h2 id="tecnologias-titulo" className="mb-6 text-3xl font-bold text-white text-balance md:text-4xl lg:text-5xl">
               Sistemas pensados para operar com segurança, estabilidade e capacidade de crescimento.
             </h2>
 
-            <p className="text-white/70 text-lg leading-relaxed">
-              Desenvolvemos com uma base técnica preparada para proteger a operação,
-              sustentar o uso no dia a dia e acompanhar a evolução do negócio.
+            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-white/70">
+              Desenvolvemos com uma base técnica preparada para proteger a operação, sustentar o uso no dia a dia e
+              acompanhar a evolução do negócio.
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+          <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
             <div className="flex-1">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
+              <div className="grid h-full grid-cols-1 gap-4 sm:grid-cols-2">
                 {pillars.map((pillar, index) => (
                     <PillarCard key={pillar.name} pillar={pillar} index={index} inView={inView} />
                 ))}
               </div>
             </div>
 
-            <div className="flex-1 max-w-xl flex flex-col">
-              <h3 className="text-2xl font-bold text-white mb-8">
-                O que isso significa para o seu projeto.
-              </h3>
+            <div className="flex max-w-xl flex-1 flex-col">
+              <h3 className="mb-8 text-2xl font-bold text-white">O que isso significa para o seu projeto.</h3>
 
-              <ul className="space-y-4 flex-1">
+              <ul className="flex-1 space-y-3">
                 {benefits.map((benefit, index) => (
                     <BenefitItem key={benefit.title} benefit={benefit} index={index} inView={inView} />
                 ))}
@@ -196,25 +171,23 @@ export function TechSection() {
             </div>
           </div>
 
-          <div className="mt-16 flex justify-center">
-            <a href="#contato" className="w-full sm:w-auto flex justify-center">
+          <div className="mt-14 flex justify-center md:mt-16">
+            <a href="#contato" className="flex w-full justify-center sm:w-auto">
               <Button
                   size="lg"
                   className={cn(
-                      "relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-5 md:py-6 text-base md:text-lg group",
+                      "group relative overflow-hidden bg-accent px-8 py-5 text-base font-semibold text-accent-foreground hover:bg-accent/90 md:py-6 md:text-lg",
                       inView && "animate-in fade-in slide-in-from-bottom-4",
                   )}
-                  style={{ animationDelay: "800ms", animationFillMode: "both" }}
+                  style={{ animationDelay: "600ms", animationFillMode: "both" }}
+                  aria-label="Descrever minha demanda para a Iseecodes"
               >
               <span className="relative z-10 flex items-center justify-center">
-                Entrar em Contato
-                <ArrowRight
-                    className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
-                    aria-hidden="true"
-                />
+                Descreva sua demanda
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </span>
                 <span
-                    className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2s_linear_infinite] motion-reduce:animate-none"
+                    className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2.4s_linear_infinite] motion-reduce:animate-none"
                     aria-hidden="true"
                 />
               </Button>
