@@ -17,25 +17,25 @@ const services = [
         icon: GitGraph,
         title: "Processos e operação",
         description:
-            "Estruturamos fluxos, rotinas e etapas operacionais para reduzir falhas, aumentar produtividade e dar mais controle à execução.",
+            "Quando a rotina depende de improviso, há retrabalho constante ou as etapas não estão claras, a operação perde fluidez e previsibilidade. Atuamos na estrutura dos fluxos, rotinas e etapas críticas para reduzir falhas, organizar a execução e dar mais consistência ao dia a dia da empresa.",
     },
     {
         icon: ArrowRightLeft,
         title: "Integração e informação",
         description:
-            "Conectamos sistemas e informações para reduzir redundâncias, melhorar a consistência dos dados e apoiar decisões com mais segurança.",
+            "Quando dados ficam espalhados, duplicados ou desencontrados entre sistemas e equipes, a operação perde tempo e a gestão perde confiança na informação. Atuamos na integração e organização das informações para reduzir ruído, melhorar a consistência dos dados e sustentar decisões com mais segurança."
     },
     {
         icon: Lock,
         title: "Controle e governança",
         description:
-            "Desenvolvemos mecanismos de controle, permissões, aprovações e rastreabilidade para reforçar governança, segurança e conformidade.",
+            "Quando faltam critérios claros, permissões, aprovações ou rastreabilidade, o negócio fica mais exposto a falhas operacionais, riscos e perda de controle. Atuamos em mecanismos de controle e governança para reforçar segurança, conformidade e domínio sobre processos críticos."
     },
     {
         icon: Target,
         title: "Indicadores e decisão",
         description:
-            "Transformamos dados da operação em acompanhamento gerencial para facilitar análise, priorização e tomada de decisão.",
+            "Quando a gestão depende de dados soltos, leitura tardia ou pouca visibilidade do que realmente importa, decidir bem se torna mais difícil. Atuamos na estruturação de indicadores e acompanhamento gerencial para dar mais clareza, prioridade e apoio à tomada de decisão."
     },
 ]
 
@@ -56,21 +56,21 @@ export function ServicesSection() {
                 <div className="max-w-6xl mx-auto text-center mb-16">
           <span
               className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-            Nossos serviços
+            Pilares de atuação
           </span>
 
                     <h2
                         id="servicos-titulo"
                         className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance"
                     >
-                        Soluções sob medida que proporcionam mais visibilidade institucional, controle e fluidez para a sua operação.
+                        Quatro pilares que orientam como estruturamos a solução da sua demanda.
                     </h2>
 
 
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        Desenvolvemos desde Sites Institucionais,  até soluções complexas de gestão, via web e mobile,
-                        com hospedagem em nuvem, tendo por base em 4 pilares.
-
+                        Pela nossa experiência, atender bem uma demanda empresarial geralmente exige atuar em um ou mais
+                        desses pilares. Essa definição acontece a partir do entendimento da necessidade apresentada,
+                        do alinhamento de expectativas e do levantamento de requisitos que orienta a execução da solução.
                     </p>
                 </div>
 
@@ -116,24 +116,19 @@ export function ServicesSection() {
                         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
                     )}
                 >
-                    <div className="w-full max-w-5xl mx-auto rounded-3xl border border-border/50 bg-background/80 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.08)] px-6 md:px-10 lg:px-14 py-10 md:py-12 text-center">
+                    <div
+                        className="w-full max-w-5xl mx-auto rounded-3xl border border-border/50 bg-background/80 backdrop-blur-sm shadow-[0_20px_60px_rgba(0,0,0,0.08)] px-6 md:px-10 lg:px-14 py-10 md:py-12 text-center">
                         <p className="text-sm md:text-base font-semibold uppercase tracking-[0.18em] text-primary/80 mb-4">
-                            Soluções que evoluem com o seu negócio
-                        </p>
-
-                        <p className="text-2xl md:text-3xl font-bold text-foreground leading-tight max-w-3xl mx-auto">
-                            Esses são alguns exemplos do que podemos desenvolver para a sua empresa.
-                        </p>
-
-                        <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-5">
-                            Criamos diferentes soluções para gestão empresarial, desde <span className="font-semibold text-primary">Sites Institucionais</span> até soluções complexas, sempre alinhadas às necessidades reais do seu negócio.
+                            Demanda, expectativa e requisitos
                         </p>
 
                         <p className="text-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-4">
       <span className="font-semibold">
-        Compartilhe sua demanda com a Iseecodes.
-      </span>{" "}
-                            Vamos estruturar uma solução clara, viável e sob medida para a realidade da sua empresa.
+        Uma solução consistente começa com clareza sobre o que precisa ser desenvolvido.
+      </span>
+                        </p>
+                        <p className="text-foreground text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-4">
+                            É a partir da demanda apresentada, das expectativas alinhadas e do levantamento de requisitos que definimos como um ou mais pilares entram na estrutura da solução.
                         </p>
 
                         <a href="#contato" className="mt-8 inline-block">
@@ -143,7 +138,7 @@ export function ServicesSection() {
                                 aria-label="Entrar em contato para falar sobre sua demanda"
                             >
         <span className="flex items-center">
-          Entrar em Contato
+         Descrever minha demanda
           <ArrowRight
               className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1"
               aria-hidden="true"

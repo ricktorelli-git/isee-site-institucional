@@ -10,7 +10,7 @@ const processSteps = [
     icon: FileSearch,
     number: "01",
     title: "Requisitos",
-    description: "Entendemos suas necessidades e objetivos do projeto",
+    description: "Entendemos a demanda, alinhamos expectativas e levantamos os requisitos da solução",
     details: [
       "Imersão no contexto do projeto",
       "Levantamento de requisitos e fluxos operacionais",
@@ -23,7 +23,7 @@ const processSteps = [
     icon: ClipboardList,
     number: "02",
     title: "Planejamento",
-    description: "Criamos um roteiro claro para execução",
+    description: "Estruturamos escopo, prioridades e etapas da execução",
     details: [
       "Estruturação do escopo inicial",
       "Definição de funcionalidades e prioridades",
@@ -38,7 +38,7 @@ const processSteps = [
     title: "Aprovação",
     description: "Validamos cada etapa antes de avançar",
     details: [
-      "Apresentação de fluxos e protótipos visuais",
+      "Apresentação de fluxos, definições funcionais e protótipos visuais quando necessário",
       "Revisão conjunta de funcionalidades previstas",
       "Alinhamento de expectativas finais",
       "Aprovação formal do planejamento e orçamento",
@@ -49,7 +49,7 @@ const processSteps = [
     icon: Code2,
     number: "04",
     title: "Desenvolvimento",
-    description: "Desenvolvimento em ciclos de entrega",
+    description: "Executamos em ciclos com entregas e validações contínuas",
     details: [
       "Entregas parciais ao longo do desenvolvimento",
       "Acompanhamento contínuo do projeto",
@@ -62,12 +62,12 @@ const processSteps = [
     icon: Rocket,
     number: "05",
     title: "Implantação",
-    description: "Preparação para lançamento e suporte inicial",
+    description: "Implantamos, estabilizamos e damos suporte inicial",
     details: [
       "Publicação em ambiente de produção",
       "Configurações finais e estabilização",
       "Treinamento de uso",
-      "Suporte e manutenção continuada",
+      "Suporte inicial e definição dos próximos passos de sustentação",
     ],
     color: "bg-primary",
   },
@@ -105,13 +105,13 @@ export function ProcessSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-5xl mx-auto text-center mb-20">
           <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider mb-4">
-            Nossa Metodologia
+            Nosso processo
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
-            Como tiramos seu projeto do papel
+            Como transformamos demanda em solução com clareza e método
           </h2>
           <p className="text-white/70 text-lg leading-relaxed">
-            Um fluxo de trabalho pensado para dar ritmo, alinhamento e previsibilidade à execução.
+            Cada etapa existe para transformar a demanda apresentada em uma solução viável, com requisitos claros, alinhamento de expectativas e previsibilidade na execução.
           </p>
         </div>
 
