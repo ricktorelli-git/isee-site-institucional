@@ -47,24 +47,19 @@ export function HeroSection() {
     }
 
     const beforeText = displayText.slice(0, targetIndex)
-    const highlightedText = displayText.slice(targetIndex, targetIndex + targetText.length)
     const afterText = displayText.slice(targetIndex + targetText.length)
 
     return (
         <>
           {beforeText}
-          <span className="relative inline-block">
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-accent via-accent/80 to-primary">
-            {highlightedText}
+          <span className="inline-block">
+            <span className="text-accent">Isee</span>
+            codes
           </span>
-            {typingComplete && (
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-linear-to-r from-accent to-primary animate-[expandLine_0.45s_ease-out_forwards]" />
-            )}
-        </span>
           {afterText}
         </>
     )
-  }, [displayText, typingComplete])
+  }, [displayText])
 
   return (
       <section
@@ -146,17 +141,13 @@ export function HeroSection() {
               <a href="#contato" className="w-full sm:w-auto">
                 <Button
                     size="lg"
-                    className="group relative w-full overflow-hidden bg-accent px-8 py-5 text-base font-semibold text-accent-foreground hover:bg-accent/90 sm:w-auto md:py-6 md:text-lg"
+                    className="group w-full bg-accent px-8 py-5 text-base font-semibold text-accent-foreground hover:bg-accent/90 sm:w-auto md:py-6 md:text-lg"
                     aria-label="Descrever minha demanda para a Iseecodes"
                 >
                 <span className="relative z-10 flex items-center justify-center">
                   Descreva sua demanda
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </span>
-                  <span
-                      className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2.4s_linear_infinite] motion-reduce:animate-none"
-                      aria-hidden="true"
-                  />
                 </Button>
               </a>
 
@@ -208,14 +199,6 @@ export function HeroSection() {
         @keyframes fadeSlideUp {
           from { opacity: 0; transform: translateY(24px); }
           to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes expandLine {
-          from { transform: scaleX(0); }
-          to { transform: scaleX(1); }
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
         }
         @keyframes scrollBounce {
           0%, 100% { transform: translateY(0); opacity: 1; }

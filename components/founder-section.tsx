@@ -29,17 +29,13 @@ export function FounderSection() {
                     <a href="#contato" className="mt-6 inline-block">
                         <Button
                             size="lg"
-                            className="group relative overflow-hidden bg-accent px-8 py-6 text-lg font-semibold text-accent-foreground hover:bg-accent/90"
+                            className="group bg-accent px-8 py-6 text-lg font-semibold text-accent-foreground hover:bg-accent/90"
                             aria-label="Descrever minha demanda para a Iseecodes"
                         >
               <span className="relative z-10 flex items-center">
                 Descreva sua demanda
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </span>
-                            <span
-                                className="absolute inset-0 bg-linear-to-r from-accent via-white/20 to-accent bg-size-[200%_100%] animate-[shimmer_2.4s_linear_infinite]"
-                                aria-hidden="true"
-                            />
                         </Button>
                     </a>
                 </div>
