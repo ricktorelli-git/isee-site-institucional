@@ -206,7 +206,7 @@ export function ProcessSection() {
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="process-step-title"
-                  className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-3xl overflow-hidden rounded-4xl border border-accent/20 bg-background/96 p-8 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 md:p-10"
+                  className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-lg overflow-y-auto rounded-3xl border border-accent/20 bg-background/96 p-5 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 max-h-[88vh] md:max-w-3xl md:rounded-4xl md:p-10"
                   onClick={(event) => event.stopPropagation()}
               >
                 <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-background/40 to-primary/5" aria-hidden="true" />
@@ -215,7 +215,7 @@ export function ProcessSection() {
                 <button
                     type="button"
                     onClick={() => setSelectedCardIndex(null)}
-                    className="absolute top-5 right-5 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-background text-accent transition-colors hover:bg-accent/10"
+                    className="sticky top-3 ml-auto z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-accent/20 bg-background text-accent transition-colors hover:bg-accent/10 md:absolute md:top-5 md:right-5 md:h-10 md:w-10"
                     aria-label="Fechar destaque da etapa"
                 >
                   <X className="h-5 w-5" />
