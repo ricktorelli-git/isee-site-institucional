@@ -53,7 +53,7 @@ export function HeroSection() {
         <>
           {beforeText}
           <span className="inline-block">
-            <span className="text-accent">Isee</span>
+            <span className="text-brand-highlight">Isee</span>
             codes
           </span>
           {afterText}
@@ -65,7 +65,7 @@ export function HeroSection() {
       <section
           id="inicio"
           aria-label="Seção principal da Iseecodes"
-          className="relative flex min-h-[calc(100svh-5rem)] items-center justify-center overflow-hidden bg-secondary pt-24 pb-10 md:min-h-screen md:pt-20 md:pb-4"
+          className="relative flex min-h-[calc(100svh-5rem)] items-center justify-center overflow-hidden bg-hero-surface pt-24 pb-10 md:min-h-screen md:pt-20 md:pb-4"
       >
         <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
           <div
@@ -141,7 +141,7 @@ export function HeroSection() {
               <a href="#contato" className="w-full sm:w-auto">
                 <Button
                     size="lg"
-                    className="group w-full bg-accent px-8 py-5 text-base font-semibold text-accent-foreground hover:bg-accent/90 sm:w-auto md:py-6 md:text-lg"
+                    className="group w-full bg-button-primary px-8 py-5 text-base font-semibold text-button-primary-foreground hover:bg-button-primary-hover sm:w-auto md:py-6 md:text-lg"
                     aria-label="Descrever minha demanda para a Iseecodes"
                 >
                 <span className="relative z-10 flex items-center justify-center">

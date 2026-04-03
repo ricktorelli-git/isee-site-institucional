@@ -29,7 +29,7 @@ export function FounderSection() {
                     <a href="#contato" className="mt-6 inline-block">
                         <Button
                             size="lg"
-                            className="group bg-accent px-8 py-6 text-lg font-semibold text-accent-foreground hover:bg-accent/90"
+                            className="group bg-button-primary px-8 py-6 text-lg font-semibold text-button-primary-foreground hover:bg-button-primary-hover"
                             aria-label="Descrever minha demanda para a Iseecodes"
                         >
               <span className="relative z-10 flex items-center">

@@ -64,12 +64,16 @@ export function ServicesSection() {
                             key={service.title}
                             role="listitem"
                             className={cn(
-                                "group border border-border/50 bg-background transition-all duration-500",
-                                "hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-primary/5",
+                                "group relative overflow-hidden border border-border/50 bg-background transition-all duration-500",
+                                "hover:-translate-y-1 hover:border-accent/60 hover:shadow-xl hover:shadow-accent/5",
                                 inView && "animate-in fade-in slide-in-from-bottom-4",
                             )}
                             style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both" }}
                         >
+                            <div
+                                className="pointer-events-none absolute inset-0 bg-linear-to-br from-accent/8 via-accent/4 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                                aria-hidden="true"
+                            />
                             <CardContent className="p-6 md:p-8">
                                 <div
                                     className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-primary"
@@ -108,7 +112,7 @@ export function ServicesSection() {
                         <a href="#contato" className="mt-8 inline-block">
                             <Button
                                 size="lg"
-                                className="rounded-xl bg-accent px-8 py-6 text-base font-semibold text-accent-foreground shadow-lg transition-all duration-300 hover:bg-accent/90 hover:shadow-xl md:text-lg"
+                                className="rounded-xl bg-button-primary px-8 py-6 text-base font-semibold text-button-primary-foreground shadow-lg transition-all duration-300 hover:bg-button-primary-hover hover:shadow-xl md:text-lg"
                                 aria-label="Descrever minha demanda para a Iseecodes"
                             >
                 <span className="flex items-center">

@@ -41,13 +41,13 @@ const contactItems = [
 
 export function Footer() {
   return (
-      <footer className="bg-secondary py-12 md:py-14 lg:py-16" role="contentinfo">
+      <footer className="bg-hero-surface py-12 md:py-14 lg:py-16" role="contentinfo">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mb-5 grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-12">
             <div className="lg:col-span-2">
               <a href="#inicio" className="mb-6 flex items-center" aria-label="Iseecodes - voltar ao início">
               <span className="text-2xl font-bold text-white">
-                <span className="text-accent">Isee</span>codes
+                <span className="text-brand-highlight">Isee</span>codes
               </span>
               </a>
 

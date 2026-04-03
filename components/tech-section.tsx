@@ -176,7 +176,7 @@ export function TechSection() {
               <Button
                   size="lg"
                   className={cn(
-                      "group bg-accent px-8 py-5 text-base font-semibold text-accent-foreground hover:bg-accent/90 md:py-6 md:text-lg",
+                      "group bg-button-primary px-8 py-5 text-base font-semibold text-button-primary-foreground hover:bg-button-primary-hover md:py-6 md:text-lg",
                       inView && "animate-in fade-in slide-in-from-bottom-4",
                   )}
                   style={{ animationDelay: "600ms", animationFillMode: "both" }}

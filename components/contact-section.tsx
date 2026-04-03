@@ -229,7 +229,7 @@ export function ContactSection() {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-accent py-6 text-base font-semibold text-accent-foreground hover:bg-accent/90"
+                      className="w-full bg-button-primary py-6 text-base font-semibold text-button-primary-foreground hover:bg-button-primary-hover"
                   >
                     {isSubmitting ? (
                         <>

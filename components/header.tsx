@@ -77,7 +77,7 @@ export function Header() {
           className={cn(
               "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
               isScrolled
-                  ? "bg-[#F9A05F] backdrop-blur-xl shadow-lg border-b border-white/20"
+                  ? "bg-header-scrolled backdrop-blur-xl shadow-lg border-b border-white/20"
                   : "bg-secondary",
           )}
       >
@@ -88,7 +88,7 @@ export function Header() {
               <span
                   className={cn(
                       "transition-all duration-500",
-                      isScrolled ? "text-secondary" : "text-accent",
+                      isScrolled ? "text-secondary" : "text-brand-highlight",
                   )}
               >
                 Isee
@@ -145,7 +145,7 @@ export function Header() {
                         "font-semibold text-sm xl:text-base px-5 xl:px-6 transition-all duration-500",
                         isScrolled
                             ? "bg-secondary hover:bg-secondary/90 text-white hover:shadow-[0_0_20px_rgba(0,84,132,0.5)]"
-                            : "bg-accent hover:bg-accent/90 text-accent-foreground hover:shadow-[0_0_20px_rgba(245,134,52,0.4)]",
+                            : "bg-button-primary hover:bg-button-primary-hover text-button-primary-foreground hover:shadow-[0_0_20px_rgba(245,134,52,0.4)]",
                     )}
                 >
                   Entrar em Contato
@@ -174,7 +174,7 @@ export function Header() {
               <div
                   className={cn(
                       "lg:hidden backdrop-blur-xl border-t py-4 animate-in slide-in-from-top-2 transition-all duration-500",
-                      isScrolled ? "bg-[#F9A05F]/98 border-white/20" : "bg-secondary/98 border-primary/10",
+                      isScrolled ? "bg-header-scrolled/98 border-white/20" : "bg-secondary/98 border-primary/10",
                   )}
               >
                 <nav className="flex flex-col gap-1">
@@ -209,7 +209,7 @@ export function Header() {
                               "w-full font-semibold text-base py-6 transition-all duration-500",
                               isScrolled
                                   ? "bg-secondary hover:bg-secondary/90 text-white"
-                                  : "bg-accent hover:bg-accent/90 text-accent-foreground",
+                                  : "bg-button-primary hover:bg-button-primary-hover text-button-primary-foreground",
                           )}
                       >
                         Entrar em Contato

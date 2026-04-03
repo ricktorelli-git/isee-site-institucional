@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check } from "lucide-react"
+import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, X, Expand } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
@@ -75,22 +75,45 @@ const processSteps = [
 
 export function ProcessSection() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
-  const [activeCardIndex, setActiveCardIndex] = useState(-1)
+  const [activeCardIndex, setActiveCardIndex] = useState(0)
+  const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (!inView) return
 
     const timers: NodeJS.Timeout[] = []
     processSteps.forEach((_, index) => {
-      const timer = setTimeout(() => setActiveCardIndex(index), 300 + index * 250)
+      const timer = setTimeout(() => setActiveCardIndex(index), 260 + index * 220)
       timers.push(timer)
     })
 
     return () => timers.forEach((timer) => clearTimeout(timer))
   }, [inView])
 
+  useEffect(() => {
+    if (selectedCardIndex === null) return
+
+    const previousOverflow = document.body.style.overflow
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedCardIndex(null)
+      }
+    }
+
+    document.body.style.overflow = "hidden"
+    window.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [selectedCardIndex])
+
+  const selectedStep = selectedCardIndex !== null ? processSteps[selectedCardIndex] : null
+
   return (
-      <section id="processo" className="overflow-hidden bg-secondary py-24" ref={ref}>
+      <section id="processo" className="overflow-hidden bg-hero-surface py-24" ref={ref}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto mb-16 max-w-4xl text-center md:mb-20">
           <span className="mb-4 inline-block text-accent font-semibold text-sm uppercase tracking-wider">
@@ -106,68 +129,54 @@ export function ProcessSection() {
           </div>
 
           <div className="relative mx-auto max-w-4xl">
-            <div className="absolute top-0 bottom-0 left-8 w-0.5 bg-white/10 md:left-1/2 md:-translate-x-px">
-              <div
-                  className={cn(
-                      "w-full bg-linear-to-b from-primary via-accent to-primary transition-all duration-1800 ease-out",
-                      inView ? "h-full" : "h-0",
-                  )}
-              />
-            </div>
+            <div className="pointer-events-none absolute top-4 bottom-4 left-8 w-px bg-linear-to-b from-accent/40 via-accent/25 to-accent/10" aria-hidden="true" />
 
-            <div className="flex flex-col gap-10 md:gap-14">
+            <div className="flex flex-col gap-7 md:gap-8">
               {processSteps.map((step, index) => (
                   <div
                       key={step.number}
-                      className={cn("relative", inView && "animate-in fade-in slide-in-from-bottom-4")}
-                      style={{ animationDelay: `${index * 120}ms`, animationFillMode: "both", animationDuration: "500ms" }}
+                      className={cn("relative pl-20", inView && "animate-in fade-in slide-in-from-bottom-4")}
+                      style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both", animationDuration: "420ms" }}
                   >
-                    <div className={cn("flex flex-col items-start gap-5 md:flex-row", index % 2 === 1 && "md:flex-row-reverse")}>
-                      <div className="relative z-10 shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
-                        <div
-                            className={cn(
-                                "flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300 hover:scale-105",
-                                step.color,
-                            )}
-                        >
-                          <step.icon className="h-7 w-7 text-white" />
-                        </div>
-                      </div>
-
-                      <div className={cn("flex-1 md:w-[calc(50%-4rem)]", index % 2 === 0 ? "md:pr-16" : "md:pl-16")}>
-                        <div
-                            className={cn(
-                                "ml-8 rounded-2xl border-2 bg-white/5 p-6 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 md:ml-0 lg:p-8",
-                                activeCardIndex >= index ? "border-accent shadow-lg shadow-accent/20" : "border-white/10 hover:border-accent/60",
-                            )}
-                        >
-                          <div className="mb-4 flex items-center gap-3">
-                            <span className="text-accent font-bold text-sm">{step.number}</span>
-                            <h3 className="text-2xl font-bold text-white">{step.title}</h3>
-                          </div>
-
-                          <p className="mb-5 text-white/72">{step.description}</p>
-
-                          <ul className="space-y-3">
-                            {step.details.map((detail, detailIndex) => (
-                                <li
-                                    key={detailIndex}
-                                    className={cn(
-                                        "flex translate-x-0 items-start gap-3 text-white/80 transition-all duration-300",
-                                        inView ? "opacity-100" : "-translate-x-4 opacity-0",
-                                    )}
-                                    style={{ transitionDelay: `${index * 120 + detailIndex * 60}ms` }}
-                                >
-                                  <Check className={cn("mt-0.5 h-4 w-4 shrink-0", step.color === "bg-primary" ? "text-primary" : "text-accent")} />
-                                  <span className="text-sm leading-relaxed">{detail}</span>
-                                </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="hidden flex-1 md:block md:w-[calc(50%-4rem)]" />
+                    <div className={cn(
+                      "absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300",
+                      step.color,
+                      activeCardIndex >= index ? "scale-100" : "scale-95 opacity-85",
+                    )}>
+                      <step.icon className="h-7 w-7 text-white" />
                     </div>
+
+                    <article
+                        className={cn(
+                            "rounded-2xl border bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 md:p-7",
+                            selectedCardIndex === index
+                                ? "border-accent/70 bg-linear-to-br from-accent/14 via-white/8 to-white/5 shadow-xl shadow-accent/20"
+                                : activeCardIndex >= index
+                                    ? "border-accent/60 shadow-lg shadow-accent/10"
+                                    : "border-white/10",
+                        )}
+                    >
+                      <div className="mb-3 flex items-center gap-3">
+                        <span className="text-sm font-bold text-accent">{step.number}</span>
+                        <h3 className="text-xl font-bold text-white md:text-2xl">{step.title}</h3>
+                      </div>
+
+                      <p className="text-white/75">{step.description}</p>
+
+                      <div className="mt-5 border-t border-white/10 pt-4">
+                        <button
+                            type="button"
+                            onClick={() => setSelectedCardIndex(index)}
+                            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-[0_10px_28px_rgba(245,134,52,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-button-primary-hover focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent/50"
+                            aria-haspopup="dialog"
+                            aria-expanded={selectedCardIndex === index}
+                            aria-controls={selectedCardIndex === index ? "process-step-spotlight" : undefined}
+                        >
+                          <Expand className="h-4 w-4" />
+                          Exibir detalhe
+                        </button>
+                      </div>
+                    </article>
                   </div>
               ))}
             </div>
@@ -185,6 +194,69 @@ export function ProcessSection() {
             </div>
           </div>
         </div>
+
+        {selectedStep && (
+            <div
+                className="animate-in fade-in fixed inset-0 z-60 flex items-center justify-center bg-secondary/55 px-4 backdrop-blur-sm duration-300"
+                onClick={() => setSelectedCardIndex(null)}
+                role="presentation"
+            >
+              <div
+                  id="process-step-spotlight"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="process-step-title"
+                  className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-3xl overflow-hidden rounded-4xl border border-accent/20 bg-background/96 p-8 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 md:p-10"
+                  onClick={(event) => event.stopPropagation()}
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-background/40 to-primary/5" aria-hidden="true" />
+                <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-accent/12 to-transparent" aria-hidden="true" />
+
+                <button
+                    type="button"
+                    onClick={() => setSelectedCardIndex(null)}
+                    className="absolute top-5 right-5 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-background text-accent transition-colors hover:bg-accent/10"
+                    aria-label="Fechar destaque da etapa"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                <div className="relative z-10">
+                  <div className="mb-7 flex items-center gap-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/20 bg-accent/12 text-accent shadow-[0_10px_30px_rgba(245,134,52,0.14)]">
+                      <selectedStep.icon className="h-8 w-8" />
+                    </div>
+                    <div>
+                      <span className="mb-2 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+                        Etapa {selectedStep.number}
+                      </span>
+                      <h3 id="process-step-title" className="text-2xl font-bold text-secondary md:text-3xl">
+                        {selectedStep.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="mb-7 max-w-2xl text-base leading-8 text-foreground/80 md:text-lg">
+                    {selectedStep.description}
+                  </p>
+
+                  <div className="rounded-3xl border border-accent/15 bg-linear-to-br from-accent/8 via-background to-background p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] md:p-7">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent/90">
+                      O que acontece nesta etapa
+                    </p>
+                    <ul className="space-y-3">
+                      {selectedStep.details.map((detail) => (
+                          <li key={detail} className="flex items-start gap-3 rounded-2xl bg-background/70 px-4 py-3 text-foreground/85">
+                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                            <span className="leading-relaxed">{detail}</span>
+                          </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        )}
       </section>
   )
 }
