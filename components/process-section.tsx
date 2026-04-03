@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, X, Expand } from "lucide-react"
+import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, Expand } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
@@ -206,7 +206,7 @@ export function ProcessSection() {
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="process-step-title"
-                  className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-lg overflow-y-auto rounded-3xl border border-accent/20 bg-background/96 p-5 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 max-h-[88vh] md:max-w-3xl md:rounded-4xl md:p-10"
+                  className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-lg overflow-y-auto rounded-3xl border border-accent/20 bg-background/96 p-4 pt-12 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 max-h-[88vh] md:max-w-3xl md:rounded-4xl md:p-10"
                   onClick={(event) => event.stopPropagation()}
               >
                 <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-background/40 to-primary/5" aria-hidden="true" />
@@ -215,14 +215,14 @@ export function ProcessSection() {
                 <button
                     type="button"
                     onClick={() => setSelectedCardIndex(null)}
-                    className="sticky top-3 ml-auto z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-accent/20 bg-background text-accent transition-colors hover:bg-accent/10 md:absolute md:top-5 md:right-5 md:h-10 md:w-10"
+                    className="absolute top-3 right-3 z-20 inline-flex items-center rounded-md border border-accent/20 bg-background px-3 py-1.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/10 md:top-5 md:right-5"
                     aria-label="Fechar destaque da etapa"
                 >
-                  <X className="h-5 w-5" />
+                  Fechar
                 </button>
 
                 <div className="relative z-10">
-                  <div className="mb-7 flex items-center gap-4">
+                  <div className="mb-4 flex items-center gap-3 md:mb-7 md:gap-4">
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/20 bg-accent/12 text-accent shadow-[0_10px_30px_rgba(245,134,52,0.14)]">
                       <selectedStep.icon className="h-8 w-8" />
                     </div>
@@ -236,17 +236,17 @@ export function ProcessSection() {
                     </div>
                   </div>
 
-                  <p className="mb-7 max-w-2xl text-base leading-8 text-foreground/80 md:text-lg">
+                  <p className="mb-4 max-w-2xl text-sm leading-6 text-foreground/80 md:mb-7 md:text-lg md:leading-8">
                     {selectedStep.description}
                   </p>
 
-                  <div className="rounded-3xl border border-accent/15 bg-linear-to-br from-accent/8 via-background to-background p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] md:p-7">
-                    <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-accent/90">
+                  <div className="rounded-3xl border border-accent/15 bg-linear-to-br from-accent/8 via-background to-background p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] md:p-7">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent/90 md:mb-4 md:text-sm md:tracking-[0.18em]">
                       O que acontece nesta etapa
                     </p>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 md:space-y-3">
                       {selectedStep.details.map((detail) => (
-                          <li key={detail} className="flex items-start gap-3 rounded-2xl bg-background/70 px-4 py-3 text-foreground/85">
+                          <li key={detail} className="flex items-start gap-2 rounded-2xl bg-background/70 px-3 py-2 text-sm text-foreground/85 md:gap-3 md:px-4 md:py-3 md:text-base">
                             <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                             <span className="leading-relaxed">{detail}</span>
                           </li>
