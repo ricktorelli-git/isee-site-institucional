@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from "react-intersection-observer"
-import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, Expand } from "lucide-react"
+import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, Expand, Handshake } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
@@ -33,10 +33,10 @@ const processSteps = [
     color: "bg-accent",
   },
   {
-    icon: CheckCircle2,
+    icon: Handshake,
     number: "03",
     title: "Aprovação",
-    description: "Validamos cada etapa antes de avançar",
+    description: "Validamos cada etapa com o aceite do cliente antes de avançar",
     details: [
       "Apresentação de fluxos, definições funcionais e protótipos visuais quando necessário",
       "Revisão conjunta de funcionalidades previstas",
@@ -59,8 +59,21 @@ const processSteps = [
     color: "bg-accent",
   },
   {
-    icon: Rocket,
+    icon: CheckCircle2,
     number: "05",
+    title: "Homologação",
+    description: "Apresentamos a solução finalizada, validamos os ajustes finais e formalizamos o aceite",
+    details: [
+      "Apresentação da solução finalizada para validação com o cliente",
+      "Revisão dos critérios de aceite e aderência aos requisitos",
+      "Execução dos ajustes finais de homologação, quando necessários",
+      "Registro do aceite formal para liberação da implantação",
+    ],
+    color: "bg-primary",
+  },
+  {
+    icon: Rocket,
+    number: "06",
     title: "Implantação",
     description: "Implantamos, estabilizamos e damos suporte inicial",
     details: [
@@ -69,7 +82,7 @@ const processSteps = [
       "Treinamento de uso",
       "Suporte inicial e definição dos próximos passos de sustentação",
     ],
-    color: "bg-primary",
+    color: "bg-accent",
   },
 ]
 
@@ -129,17 +142,17 @@ export function ProcessSection() {
           </div>
 
           <div className="relative mx-auto max-w-4xl">
-            <div className="pointer-events-none absolute top-4 bottom-4 left-8 w-px bg-linear-to-b from-accent/40 via-accent/25 to-accent/10" aria-hidden="true" />
+            <div className="pointer-events-none absolute top-4 bottom-4 left-8 w-px bg-linear-to-b from-accent/40 via-accent/25 to-accent/10 md:hidden" aria-hidden="true" />
 
-            <div className="flex flex-col gap-7 md:gap-8">
+            <div className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-6">
               {processSteps.map((step, index) => (
                   <div
                       key={step.number}
-                      className={cn("relative pl-20", inView && "animate-in fade-in slide-in-from-bottom-4")}
+                      className={cn("relative pl-20 md:pl-0", inView && "animate-in fade-in slide-in-from-bottom-4")}
                       style={{ animationDelay: `${index * 100}ms`, animationFillMode: "both", animationDuration: "420ms" }}
                   >
                     <div className={cn(
-                      "absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300",
+                      "absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300 md:hidden",
                       step.color,
                       activeCardIndex >= index ? "scale-100" : "scale-95 opacity-85",
                     )}>
@@ -157,17 +170,26 @@ export function ProcessSection() {
                         )}
                     >
                       <div className="mb-3 flex items-center gap-3">
+                        <div className={cn(
+                          "hidden h-11 w-11 items-center justify-center rounded-xl shadow-md md:flex",
+                          step.color,
+                          activeCardIndex >= index ? "opacity-100" : "opacity-80",
+                        )}>
+                          <step.icon className="h-5 w-5 text-white" />
+                        </div>
                         <span className="text-sm font-bold text-accent">{step.number}</span>
                         <h3 className="text-xl font-bold text-white md:text-2xl">{step.title}</h3>
                       </div>
 
-                      <p className="text-white/75">{step.description}</p>
+                      <p className="min-h-12 overflow-hidden text-white/75 leading-6 [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+                        {step.description}
+                      </p>
 
                       <div className="mt-5 border-t border-white/10 pt-4">
                         <button
                             type="button"
                             onClick={() => setSelectedCardIndex(index)}
-                            className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-[0_10px_28px_rgba(245,134,52,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-button-primary-hover focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent/50"
+                            className="inline-flex items-center gap-2 rounded-full border border-accent/35 bg-accent/18 px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/28 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent/45"
                             aria-haspopup="dialog"
                             aria-expanded={selectedCardIndex === index}
                             aria-controls={selectedCardIndex === index ? "process-step-spotlight" : undefined}
