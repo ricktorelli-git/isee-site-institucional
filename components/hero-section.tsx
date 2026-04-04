@@ -127,8 +127,7 @@ export function HeroSection() {
                   opacity: 0,
                 }}
             >
-              Cada demanda empresarial exige clareza sobre o que precisa ser resolvido. Atuamos em processos,
-              informação, controle e decisão para estruturar soluções sob medida, alinhadas à realidade do seu negócio.
+              Atuamos em processos, informação, controle e decisão para estruturar soluções sob medida, alinhadas à realidade do seu negócio.
             </h2>
 
             <div
