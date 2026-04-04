@@ -27,8 +27,7 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Organizamos fluxos, rotinas e etapas da operação para dar mais clareza,
-                    consistência e fluidez à execução.
+                    Organizamos fluxos, rotinas e etapas para dar mais clareza e consistência à operação.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -66,8 +65,7 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Estruturamos a integração e a organização das informações para reduzir ruído,
-                    melhorar a consistência dos dados e apoiar a operação.
+                    Integramos e organizamos informações para reduzir ruído e dar mais consistência ao processo.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -105,8 +103,7 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Reforçamos critérios, acessos, aprovações e rastreabilidade para dar mais
-                    segurança, controle e governança aos processos críticos.
+                    Estruturamos acessos, aprovações e rastreabilidade para reforçar controle e governança.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -144,8 +141,7 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Organizamos informações gerenciais e indicadores para dar mais visibilidade,
-                    prioridade e apoio à tomada de decisão.
+                    Organizamos indicadores e informações gerenciais para apoiar decisões com mais clareza.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -203,10 +199,7 @@ export function ServicesSection() {
                     </h2>
 
                     <p className="mx-auto max-w-4xl text-lg leading-relaxed text-muted-foreground">
-                        Uma demanda pode surgir em um ponto específico da operação, mas soluções mais
-                        consistentes normalmente exigem olhar integrado sobre processo, informação,
-                        controle e decisão. É essa combinação que dá mais clareza, solidez e
-                        continuidade à estrutura da solução.
+                        Uma demanda pode começar em um ponto específico, mas soluções mais consistentes costumam integrar processo, informação, controle e decisão.
                     </p>
                 </div>
 
@@ -246,30 +239,22 @@ export function ServicesSection() {
 
                 <div
                     className={cn(
-                        "mt-16 transition-all duration-700 md:mt-18",
+                        "mt-16 flex justify-center transition-all duration-700 md:mt-18",
                         inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
                     )}
                 >
-                    <div className="mx-auto w-full max-w-4xl rounded-3xl border border-border/50 bg-background/80 px-6 py-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:px-10 md:py-10">
-                        <p className="mx-auto max-w-3xl text-base leading-relaxed text-foreground md:text-lg">
-              <span className="font-semibold">
-                Vamos construir juntos a solução mais adequada para a sua demanda.
+                    <a href="#contato" className="inline-block">
+                        <Button
+                            size="lg"
+                            className="rounded-xl bg-button-primary px-8 py-6 text-base font-semibold text-button-primary-foreground shadow-lg transition-all duration-300 hover:bg-button-primary-hover hover:shadow-xl md:text-lg"
+                            aria-label="Descrever sua demanda para a Iseecodes"
+                        >
+              <span className="flex items-center">
+                Descreva sua demanda
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </span>
-                        </p>
-
-                        <a href="#contato" className="mt-8 inline-block">
-                            <Button
-                                size="lg"
-                                className="rounded-xl bg-button-primary px-8 py-6 text-base font-semibold text-button-primary-foreground shadow-lg transition-all duration-300 hover:bg-button-primary-hover hover:shadow-xl md:text-lg"
-                                aria-label="Descrever sua demanda para a Iseecodes"
-                            >
-                <span className="flex items-center">
-                  Descreva sua demanda
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                </span>
-                            </Button>
-                        </a>
-                    </div>
+                        </Button>
+                    </a>
                 </div>
             </div>
         </section>

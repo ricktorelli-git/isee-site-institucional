@@ -127,7 +127,7 @@ export function HeroSection() {
                   opacity: 0,
                 }}
             >
-              Atuamos em processos, informação, controle e decisão para estruturar soluções sob medida, alinhadas à realidade do seu negócio.
+              Estruturamos soluções sob medida para organizar processos, integrar informações, reforçar controles e apoiar decisões.
             </h2>
 
             <div

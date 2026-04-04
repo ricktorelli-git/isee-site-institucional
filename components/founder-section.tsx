@@ -1,12 +1,12 @@
 "use client"
 
-import {useInView} from "react-intersection-observer"
-import {Quote, Award, Building2, TrendingUp, GraduationCap, Users, BookOpen, PiggyBank, ArrowRight} from "lucide-react"
-import {cn} from "@/lib/utils"
-import {Button} from "@/components/ui/button"
+import { useInView } from "react-intersection-observer"
+import { Quote, Award, Building2, TrendingUp, GraduationCap, Users, BookOpen, PiggyBank, ArrowRight } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 export function FounderSection() {
-    const {ref, inView} = useInView({threshold: 0.2, triggerOnce: true})
+    const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
 
     return (
         <section id="sobre" aria-labelledby="sobre-titulo" className="bg-background py-24" ref={ref}>
@@ -21,10 +21,8 @@ export function FounderSection() {
                     </h2>
 
                     <p className="text-lg leading-relaxed text-muted-foreground">
-                        A Iseecodes nasce de uma trajetória sólida em gestão, controladoria, finanças e governança. Mais
-                        do que
-                        migrar para a tecnologia, a proposta é levar essa vivência para a construção de soluções úteis,
-                        consistentes e conectadas à realidade das empresas.
+                        A Iseecodes nasce de uma trajetória sólida em gestão, finanças, controladoria e governança.
+                        A proposta é levar essa vivência para soluções úteis e conectadas à realidade das empresas.
                     </p>
 
                     <a href="#contato" className="mt-6 inline-block">
@@ -35,7 +33,7 @@ export function FounderSection() {
                         >
               <span className="relative z-10 flex items-center">
                 Descreva sua demanda
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true"/>
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </span>
                         </Button>
                     </a>
@@ -43,20 +41,20 @@ export function FounderSection() {
 
                 <div className="mx-auto mb-18 max-w-6xl">
                     <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-                        <div
-                            className={cn("relative", inView && "animate-in fade-in slide-in-from-left-8 duration-700")}>
+                        <div className={cn("relative", inView && "animate-in fade-in slide-in-from-left-8 duration-700")}>
                             <div className="relative">
                                 <figure className="relative overflow-hidden rounded-2xl shadow-2xl">
                                     <img
                                         src="/socio-fundador.jpeg"
                                         alt="Ricardo Costa Tortorelli, sócio-fundador da Iseecodes"
-                                        className="aspect-4/5 w-full object-cover"
+                                        className="aspect-[4/4.5] w-full object-cover"
                                         loading="lazy"
                                         decoding="async"
                                     />
                                     <div
                                         className="absolute inset-0 bg-linear-to-t from-secondary/90 via-secondary/20 to-transparent"
-                                        aria-hidden="true"/>
+                                        aria-hidden="true"
+                                    />
                                     <figcaption className="absolute right-0 bottom-0 left-0 p-6">
                                         <span className="block text-2xl font-bold text-white">Ricardo Costa Tortorelli</span>
                                         <span className="text-white/80">Sócio-fundador</span>
@@ -68,70 +66,52 @@ export function FounderSection() {
                                     aria-hidden="true"
                                 >
                                     <div className="flex items-center gap-2">
-                                        <Award className="h-5 w-5"/>
+                                        <Award className="h-5 w-5" />
                                         <span className="font-bold">35+ anos em gestão</span>
                                     </div>
                                 </div>
 
                                 <div
                                     className="absolute -right-4 -bottom-4 -z-10 h-full w-full rounded-2xl bg-primary/15"
-                                    aria-hidden="true"/>
+                                    aria-hidden="true"
+                                />
                             </div>
                         </div>
 
-                        <div
-                            className={cn(inView && "animate-in fade-in slide-in-from-right-8 duration-700 delay-150")}>
-                            <div
-                                className="mb-8 flex items-start gap-3 rounded-xl border-l-4 border-primary bg-muted/50 p-4">
-                                <GraduationCap className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true"/>
+                        <div className={cn(inView && "animate-in fade-in slide-in-from-right-8 duration-700 delay-150")}>
+                            <div className="mb-8 flex items-start gap-3 rounded-xl border-l-4 border-primary bg-muted/50 p-4">
+                                <GraduationCap className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
                                 <div>
                                     <div className="font-semibold text-foreground">Formação e base técnica</div>
                                     <div className="text-sm text-muted-foreground">
-                                        <span className="font-medium text-foreground">Contador</span> pela <span
-                                        className="font-medium text-foreground">PUC-RS</span> e pós-graduado em <span
-                                        className="font-medium text-foreground">Finanças Empresariais</span> pela <span
-                                        className="font-medium text-foreground">FGV</span>.
+                                        <span className="font-medium text-foreground">Contador</span> pela <span className="font-medium text-foreground">PUC-RS</span> e pós-graduado em <span className="font-medium text-foreground">Finanças Empresariais</span> pela <span className="font-medium text-foreground">FGV</span>.
                                     </div>
                                 </div>
                             </div>
 
                             <blockquote className="relative mb-8">
-                                <Quote className="absolute -top-2 -left-2 h-10 w-10 text-primary/20"
-                                       aria-hidden="true"/>
+                                <Quote className="absolute -top-2 -left-2 h-10 w-10 text-primary/20" aria-hidden="true" />
                                 <p className="pl-8 text-lg leading-relaxed text-muted-foreground italic">
-                                    &ldquo;Depois de décadas atuando em gestão, controladoria e finanças, entendi que
-                                    tecnologia só faz
-                                    sentido quando responde a necessidades reais da operação, do controle e da decisão.
-                                    A Iseecodes
-                                    nasce dessa convicção.&rdquo;
+                                    &ldquo;Ao longo da minha trajetória em gestão, controladoria e finanças, sempre considerei a tecnologia um aliado importante para agilizar a operação, ampliar o controle e apoiar a tomada de decisão.&rdquo;
                                 </p>
                             </blockquote>
 
                             <div className="mb-8 rounded-lg border border-accent/20 bg-accent/10 p-5">
-                                <p className="font-semibold text-foreground">✓ A Iseecodes nasce nova, mas não nasce do
-                                    zero.</p>
+                                <p className="font-semibold text-foreground">✓ A Iseecodes nasce nova, mas não nasce do zero.</p>
                                 <p className="mt-2 text-sm text-muted-foreground">
-                                    A empresa inicia sua atuação com seriedade, clareza de propósito e compromisso com
-                                    utilidade prática.
-                                    O objetivo não é prometer mais do que pode entregar, mas construir soluções
-                                    consistentes, úteis e
-                                    alinhadas à realidade de cada cliente.
+                                    A empresa inicia sua atuação com seriedade, clareza de propósito e foco em soluções úteis,
+                                    consistentes e alinhadas à realidade de cada cliente.
                                 </p>
                             </div>
+
                             <div className="flex items-start gap-3 rounded-xl border border-accent/20 bg-accent/10 p-4">
-                                <Users className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true"/>
+                                <Users className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
                                 <div>
-                                    <div className="font-semibold text-foreground">Vivência prática em tecnologia
-                                        aplicada
-                                    </div>
+                                    <div className="font-semibold text-foreground">Vivência prática em tecnologia aplicada</div>
                                     <div className="text-sm text-muted-foreground">
-                                        Ao longo da trajetória profissional, além da atuação em gestão, finanças,
-                                        controladoria e governança,
-                                        também houve participação direta no desenvolvimento, implantação e
-                                        reestruturação de sistemas criados
-                                        para responder a necessidades reais de controle, operação e informação. Essa
-                                        vivência reforça uma visão
-                                        de tecnologia conectada à realidade do negócio.
+                                        Além da atuação em gestão, finanças, controladoria e governança, houve participação direta no
+                                        desenvolvimento, implantação e reestruturação de sistemas voltados a necessidades reais de controle,
+                                        operação e informação.
                                     </div>
                                 </div>
                             </div>
@@ -140,23 +120,24 @@ export function FounderSection() {
                 </div>
 
                 <div className="mx-auto max-w-6xl">
-                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4" role="list"
-                         aria-label="Bases de experiência que sustentam a Iseecodes">
+                    <div
+                        className="grid grid-cols-2 gap-4 md:grid-cols-4"
+                        role="list"
+                        aria-label="Bases de experiência que sustentam a Iseecodes"
+                    >
                         <div
                             className={cn(
                                 "flex items-start gap-3 rounded-xl bg-muted/50 p-5 transition-colors hover:bg-muted",
                                 inView && "animate-in fade-in slide-in-from-bottom-4",
                             )}
-                            style={{animationDelay: "0ms"}}
+                            style={{ animationDelay: "0ms" }}
                             role="listitem"
                         >
-                            <PiggyBank className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true"/>
+                            <PiggyBank className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
                             <div>
-                                <div className="text-sm font-semibold text-foreground">Gestão financeira e
-                                    sustentabilidade
-                                </div>
-                                <div className="mt-1 text-xs text-muted-foreground">Vivência prática em gestão de
-                                    recursos, equilíbrio financeiro e visão de continuidade.
+                                <div className="text-sm font-semibold text-foreground">Gestão financeira e sustentabilidade</div>
+                                <div className="mt-1 text-xs text-muted-foreground">
+                                    Vivência em gestão de recursos, equilíbrio financeiro e continuidade.
                                 </div>
                             </div>
                         </div>
@@ -166,14 +147,14 @@ export function FounderSection() {
                                 "flex items-start gap-3 rounded-xl bg-muted/50 p-5 transition-colors hover:bg-muted",
                                 inView && "animate-in fade-in slide-in-from-bottom-4",
                             )}
-                            style={{animationDelay: "80ms"}}
+                            style={{ animationDelay: "80ms" }}
                             role="listitem"
                         >
-                            <Building2 className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true"/>
+                            <Building2 className="mt-0.5 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
                             <div>
                                 <div className="text-sm font-semibold text-foreground">Controle e governança</div>
-                                <div className="mt-1 text-xs text-muted-foreground">Repertório em mecanismos de
-                                    controle, governança e apoio à tomada de decisão com base em informação confiável.
+                                <div className="mt-1 text-xs text-muted-foreground">
+                                    Repertório em controle, governança e apoio à decisão com base em informação confiável.
                                 </div>
                             </div>
                         </div>
@@ -183,14 +164,14 @@ export function FounderSection() {
                                 "flex items-start gap-3 rounded-xl bg-muted/50 p-5 transition-colors hover:bg-muted",
                                 inView && "animate-in fade-in slide-in-from-bottom-4",
                             )}
-                            style={{animationDelay: "160ms"}}
+                            style={{ animationDelay: "160ms" }}
                             role="listitem"
                         >
-                            <BookOpen className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true"/>
+                            <BookOpen className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
                             <div>
                                 <div className="text-sm font-semibold text-foreground">Contabilidade e gestão</div>
-                                <div className="mt-1 text-xs text-muted-foreground">Uso da contabilidade como
-                                    instrumento de leitura, direcionamento e suporte à tomada de decisão.
+                                <div className="mt-1 text-xs text-muted-foreground">
+                                    Uso da contabilidade como apoio à leitura e à tomada de decisão.
                                 </div>
                             </div>
                         </div>
@@ -200,16 +181,14 @@ export function FounderSection() {
                                 "flex items-start gap-3 rounded-xl bg-muted/50 p-5 transition-colors hover:bg-muted",
                                 inView && "animate-in fade-in slide-in-from-bottom-4",
                             )}
-                            style={{animationDelay: "240ms"}}
+                            style={{ animationDelay: "240ms" }}
                             role="listitem"
                         >
-                            <TrendingUp className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true"/>
+                            <TrendingUp className="mt-0.5 h-6 w-6 shrink-0 text-accent" aria-hidden="true" />
                             <div>
-                                <div className="text-sm font-semibold text-foreground">Leitura estratégica e
-                                    conformidade
-                                </div>
-                                <div className="mt-1 text-xs text-muted-foreground">Experiência em conselho fiscal, com
-                                    leitura crítica de estruturas corporativas e de processos decisórios de longo prazo.
+                                <div className="text-sm font-semibold text-foreground">Leitura estratégica e conformidade</div>
+                                <div className="mt-1 text-xs text-muted-foreground">
+                                    Leitura crítica de estruturas corporativas e processos decisórios de longo prazo.
                                 </div>
                             </div>
                         </div>

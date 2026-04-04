@@ -1,16 +1,16 @@
 "use client"
 
-import {useInView} from "react-intersection-observer"
-import {FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, Expand, Handshake} from "lucide-react"
-import {cn} from "@/lib/utils"
-import {useEffect, useState} from "react"
+import { useInView } from "react-intersection-observer"
+import { FileSearch, ClipboardList, CheckCircle2, Code2, Rocket, Check, Expand, Handshake } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react"
 
 const processSteps = [
     {
         icon: FileSearch,
         number: "01",
         title: "Requisitos",
-        description: "Entendemos a demanda, alinhamos expectativas e levantamos os requisitos da solução",
+        description: "Entendemos a demanda e levantamos os requisitos da solução",
         details: [
             "Imersão no contexto do projeto",
             "Levantamento de requisitos e fluxos operacionais",
@@ -36,7 +36,7 @@ const processSteps = [
         icon: Handshake,
         number: "03",
         title: "Aprovação",
-        description: "Validamos cada etapa com o aceite do cliente antes de avançar",
+        description: "Validamos a solução com o cliente antes de avançar",
         details: [
             "Apresentação de fluxos, definições funcionais e protótipos visuais quando necessário",
             "Revisão conjunta de funcionalidades previstas",
@@ -62,7 +62,7 @@ const processSteps = [
         icon: CheckCircle2,
         number: "05",
         title: "Homologação",
-        description: "Apresentamos a solução finalizada, validamos os ajustes finais e formalizamos o aceite",
+        description: "Validamos a solução final e formalizamos o aceite",
         details: [
             "Apresentação da solução finalizada para validação com o cliente",
             "Revisão dos critérios de aceite e aderência aos requisitos",
@@ -87,7 +87,7 @@ const processSteps = [
 ]
 
 export function ProcessSection() {
-    const {ref, inView} = useInView({threshold: 0.1, triggerOnce: true})
+    const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
     const [activeCardIndex, setActiveCardIndex] = useState(0)
     const [selectedCardIndex, setSelectedCardIndex] = useState<number | null>(null)
 
@@ -136,18 +136,15 @@ export function ProcessSection() {
                         Como transformamos demanda em solução com clareza e método
                     </h2>
                     <p className="text-lg leading-relaxed text-white/70">
-                        Cada etapa existe para transformar a demanda apresentada em uma solução viável, com requisitos
-                        claros,
-                        alinhamento de expectativas e previsibilidade na execução. Mais do que formalizar, esse processo
-                        busca
-                        organizar a solução para que a execução avance com fluidez, segurança e alinhamento.
+                        Cada etapa existe para organizar a solução com clareza, alinhamento e previsibilidade, sem travar a execução.
                     </p>
                 </div>
 
                 <div className="relative mx-auto max-w-4xl">
                     <div
                         className="pointer-events-none absolute top-4 bottom-4 left-8 w-px bg-linear-to-b from-accent/40 via-accent/25 to-accent/10 md:hidden"
-                        aria-hidden="true"/>
+                        aria-hidden="true"
+                    />
 
                     <div className="grid grid-cols-1 gap-7 md:grid-cols-2 md:gap-6">
                         {processSteps.map((step, index) => (
@@ -157,15 +154,17 @@ export function ProcessSection() {
                                 style={{
                                     animationDelay: `${index * 100}ms`,
                                     animationFillMode: "both",
-                                    animationDuration: "420ms"
+                                    animationDuration: "420ms",
                                 }}
                             >
-                                <div className={cn(
-                                    "absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300 md:hidden",
-                                    step.color,
-                                    activeCardIndex >= index ? "scale-100" : "scale-95 opacity-85",
-                                )}>
-                                    <step.icon className="h-7 w-7 text-white"/>
+                                <div
+                                    className={cn(
+                                        "absolute left-0 top-6 flex h-16 w-16 items-center justify-center rounded-2xl shadow-lg transition-all duration-300 md:hidden",
+                                        step.color,
+                                        activeCardIndex >= index ? "scale-100" : "scale-95 opacity-85",
+                                    )}
+                                >
+                                    <step.icon className="h-7 w-7 text-white" />
                                 </div>
 
                                 <article
@@ -179,12 +178,14 @@ export function ProcessSection() {
                                     )}
                                 >
                                     <div className="mb-3 flex items-center gap-3">
-                                        <div className={cn(
-                                            "hidden h-11 w-11 items-center justify-center rounded-xl shadow-md md:flex",
-                                            step.color,
-                                            activeCardIndex >= index ? "opacity-100" : "opacity-80",
-                                        )}>
-                                            <step.icon className="h-5 w-5 text-white"/>
+                                        <div
+                                            className={cn(
+                                                "hidden h-11 w-11 items-center justify-center rounded-xl shadow-md md:flex",
+                                                step.color,
+                                                activeCardIndex >= index ? "opacity-100" : "opacity-80",
+                                            )}
+                                        >
+                                            <step.icon className="h-5 w-5 text-white" />
                                         </div>
                                         <span className="text-sm font-bold text-accent">{step.number}</span>
                                         <h3 className="text-xl font-bold text-white md:text-2xl">{step.title}</h3>
@@ -203,7 +204,7 @@ export function ProcessSection() {
                                             aria-expanded={selectedCardIndex === index}
                                             aria-controls={selectedCardIndex === index ? "process-step-spotlight" : undefined}
                                         >
-                                            <Expand className="h-4 w-4"/>
+                                            <Expand className="h-4 w-4" />
                                             Exibir detalhe
                                         </button>
                                     </div>
@@ -220,8 +221,8 @@ export function ProcessSection() {
                     )}
                 >
                     <div className="inline-flex items-center gap-3 rounded-full bg-accent/20 px-6 py-3">
-                        <CheckCircle2 className="h-5 w-5 text-accent"/>
-                        <span className="font-medium text-white">Transparência e comunicação em todas as etapas</span>
+                        <CheckCircle2 className="h-5 w-5 text-accent" />
+                        <span className="font-medium text-white">Clareza e alinhamento em todas as etapas</span>
                     </div>
                 </div>
             </div>
@@ -240,10 +241,14 @@ export function ProcessSection() {
                         className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 relative w-full max-w-lg overflow-y-auto rounded-3xl border border-accent/20 bg-background/96 p-4 pt-12 text-foreground shadow-[0_28px_90px_rgba(245,134,52,0.2)] duration-300 max-h-[88vh] md:max-w-3xl md:rounded-4xl md:p-10"
                         onClick={(event) => event.stopPropagation()}
                     >
-                        <div className="absolute inset-0 bg-linear-to-br from-accent/10 via-background/40 to-primary/5"
-                             aria-hidden="true"/>
-                        <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-accent/12 to-transparent"
-                             aria-hidden="true"/>
+                        <div
+                            className="absolute inset-0 bg-linear-to-br from-accent/10 via-background/40 to-primary/5"
+                            aria-hidden="true"
+                        />
+                        <div
+                            className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-accent/12 to-transparent"
+                            aria-hidden="true"
+                        />
 
                         <button
                             type="button"
@@ -256,17 +261,14 @@ export function ProcessSection() {
 
                         <div className="relative z-10">
                             <div className="mb-4 flex items-center gap-3 md:mb-7 md:gap-4">
-                                <div
-                                    className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/20 bg-accent/12 text-accent shadow-[0_10px_30px_rgba(245,134,52,0.14)]">
-                                    <selectedStep.icon className="h-8 w-8"/>
+                                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/20 bg-accent/12 text-accent shadow-[0_10px_30px_rgba(245,134,52,0.14)]">
+                                    <selectedStep.icon className="h-8 w-8" />
                                 </div>
                                 <div>
-                      <span
-                          className="mb-2 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-                        Etapa {selectedStep.number}
-                      </span>
-                                    <h3 id="process-step-title"
-                                        className="text-2xl font-bold text-secondary md:text-3xl">
+                  <span className="mb-2 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+                    Etapa {selectedStep.number}
+                  </span>
+                                    <h3 id="process-step-title" className="text-2xl font-bold text-secondary md:text-3xl">
                                         {selectedStep.title}
                                     </h3>
                                 </div>
@@ -276,16 +278,17 @@ export function ProcessSection() {
                                 {selectedStep.description}
                             </p>
 
-                            <div
-                                className="rounded-3xl border border-accent/15 bg-linear-to-br from-accent/8 via-background to-background p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] md:p-7">
+                            <div className="rounded-3xl border border-accent/15 bg-linear-to-br from-accent/8 via-background to-background p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] md:p-7">
                                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent/90 md:mb-4 md:text-sm md:tracking-[0.18em]">
                                     O que acontece nesta etapa
                                 </p>
                                 <ul className="space-y-2 md:space-y-3">
                                     {selectedStep.details.map((detail) => (
-                                        <li key={detail}
-                                            className="flex items-start gap-2 rounded-2xl bg-background/70 px-3 py-2 text-sm text-foreground/85 md:gap-3 md:px-4 md:py-3 md:text-base">
-                                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent"/>
+                                        <li
+                                            key={detail}
+                                            className="flex items-start gap-2 rounded-2xl bg-background/70 px-3 py-2 text-sm text-foreground/85 md:gap-3 md:px-4 md:py-3 md:text-base"
+                                        >
+                                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                                             <span className="leading-relaxed">{detail}</span>
                                         </li>
                                     ))}

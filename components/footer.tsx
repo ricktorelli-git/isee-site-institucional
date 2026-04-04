@@ -61,8 +61,7 @@ export function Footer() {
               </div>
 
               <p className="mb-6 max-w-md leading-relaxed text-white/60">
-                Iseecodes Desenvolvimento Web Ltda. Software house especializada em soluções web e mobile sob demanda,
-                com foco em gestão empresarial.
+                Software house especializada em soluções web e mobile sob demanda, com foco em gestão empresarial.
               </p>
             </div>
 

@@ -119,14 +119,17 @@ export function ContactSection() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <div className={cn("mb-12 text-center", inView && "animate-in fade-in slide-in-from-bottom-6 duration-700")}>
-              <span className="mb-4 inline-block text-primary font-semibold text-sm uppercase tracking-wider">Fale conosco</span>
-              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Vamos conversar sobre sua demanda?</h2>
+            <span className="mb-4 inline-block text-primary font-semibold text-sm uppercase tracking-wider">
+              Fale conosco
+            </span>
+              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+                Vamos conversar sobre sua demanda?
+              </h2>
               <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                Conte brevemente sua necessidade e entraremos em contato para entender o contexto, alinhar expectativas
-                e avaliar como estruturar a solução mais adequada.
+                Conte brevemente sua necessidade. Entraremos em contato para entender o contexto e estruturar a solução mais adequada.
               </p>
               <p className="mx-auto mt-6 max-w-2xl px-4 text-sm font-semibold text-primary/90 md:px-0 md:text-base">
-                Respondemos normalmente em até 1 dia útil.
+                Respondemos em até 1 dia útil.
               </p>
             </div>
 
@@ -211,7 +214,7 @@ export function ContactSection() {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="Descreva sua demanda, o contexto e o principal objetivo que você deseja resolver."
+                        placeholder="Descreva sua demanda e o que você precisa resolver."
                         rows={5}
                         required
                         className="resize-none bg-background"
