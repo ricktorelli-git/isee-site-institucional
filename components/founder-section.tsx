@@ -49,7 +49,7 @@ export function FounderSection() {
                                 <figure className="relative overflow-hidden rounded-2xl shadow-2xl">
                                     <img
                                         src="/socio-fundador.jpeg"
-                                        alt="Ricardo Tortorelli, sócio-fundador da Iseecodes"
+                                        alt="Ricardo Costa Tortorelli, sócio-fundador da Iseecodes"
                                         className="aspect-4/5 w-full object-cover"
                                         loading="lazy"
                                         decoding="async"
