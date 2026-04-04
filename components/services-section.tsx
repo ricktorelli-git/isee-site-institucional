@@ -27,9 +27,8 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Quando a operação depende de improviso, retrabalho ou etapas pouco claras,
-                    perde fluidez e previsibilidade. Atuamos na organização dos fluxos e rotinas
-                    para dar mais consistência à execução.
+                    Organizamos fluxos, rotinas e etapas da operação para dar mais clareza,
+                    consistência e fluidez à execução.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -67,9 +66,8 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Quando dados ficam espalhados, duplicados ou desencontrados, a operação perde
-                    tempo e a gestão perde confiança na informação. Atuamos na integração e
-                    organização dos dados para reduzir ruído e dar mais consistência ao processo.
+                    Estruturamos a integração e a organização das informações para reduzir ruído,
+                    melhorar a consistência dos dados e apoiar a operação.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -107,9 +105,8 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Quando faltam critérios, permissões, aprovações ou rastreabilidade, o negócio
-                    fica mais exposto a falhas e perda de controle. Atuamos na estruturação de
-                    mecanismos que reforçam segurança e governança.
+                    Reforçamos critérios, acessos, aprovações e rastreabilidade para dar mais
+                    segurança, controle e governança aos processos críticos.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -147,9 +144,8 @@ const services: ServiceItem[] = [
         description: (
             <>
                 <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    Quando a gestão depende de dados soltos ou pouca visibilidade do que importa,
-                    decidir bem se torna mais difícil. Atuamos na organização das informações
-                    gerenciais para dar mais clareza à tomada de decisão.
+                    Organizamos informações gerenciais e indicadores para dar mais visibilidade,
+                    prioridade e apoio à tomada de decisão.
                 </p>
 
                 <div className="mt-4 rounded-2xl border border-primary/15 bg-primary/5 p-4 shadow-sm">
@@ -256,9 +252,9 @@ export function ServicesSection() {
                 >
                     <div className="mx-auto w-full max-w-4xl rounded-3xl border border-border/50 bg-background/80 px-6 py-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:px-10 md:py-10">
                         <p className="mx-auto max-w-3xl text-base leading-relaxed text-foreground md:text-lg">
-      <span className="font-semibold">
-        Vamos construir juntos a solução mais adequada para a sua demanda.
-      </span>
+              <span className="font-semibold">
+                Vamos construir juntos a solução mais adequada para a sua demanda.
+              </span>
                         </p>
 
                         <a href="#contato" className="mt-8 inline-block">
@@ -267,10 +263,10 @@ export function ServicesSection() {
                                 className="rounded-xl bg-button-primary px-8 py-6 text-base font-semibold text-button-primary-foreground shadow-lg transition-all duration-300 hover:bg-button-primary-hover hover:shadow-xl md:text-lg"
                                 aria-label="Descrever sua demanda para a Iseecodes"
                             >
-        <span className="flex items-center">
-          Descreva sua demanda
-          <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-        </span>
+                <span className="flex items-center">
+                  Descreva sua demanda
+                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                </span>
                             </Button>
                         </a>
                     </div>
