@@ -255,26 +255,22 @@ export function ServicesSection() {
                     )}
                 >
                     <div className="mx-auto w-full max-w-4xl rounded-3xl border border-border/50 bg-background/80 px-6 py-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur-sm md:px-10 md:py-10">
-                        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary/80 md:text-base">
-                            Demanda, estrutura e solução
-                        </p>
-
                         <p className="mx-auto max-w-3xl text-base leading-relaxed text-foreground md:text-lg">
-              <span className="font-semibold">
-                Uma solução consistente começa com clareza sobre o que precisa ser resolvido.
-              </span>
+      <span className="font-semibold">
+        Vamos construir juntos a solução mais adequada para a sua demanda.
+      </span>
                         </p>
 
                         <a href="#contato" className="mt-8 inline-block">
                             <Button
                                 size="lg"
                                 className="rounded-xl bg-button-primary px-8 py-6 text-base font-semibold text-button-primary-foreground shadow-lg transition-all duration-300 hover:bg-button-primary-hover hover:shadow-xl md:text-lg"
-                                aria-label="Descrever minha demanda para a Iseecodes"
+                                aria-label="Descrever sua demanda para a Iseecodes"
                             >
-                <span className="flex items-center">
-                  Descreva sua demanda
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
-                </span>
+        <span className="flex items-center">
+          Descreva sua demanda
+          <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+        </span>
                             </Button>
                         </a>
                     </div>
